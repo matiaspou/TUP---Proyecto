@@ -1,0 +1,41 @@
+/* Header */
+header {
+  grid-area: Header;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    background-color: #303030;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+
+  }
+  
+  .logo img{
+    height: 5rem;
+    width: auto;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #303030;
+    border-color: #ffffff49;
+    border-width: 2px;
+    color: white;
+  }
+  
+  .header-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  
+  .cart, .profile {
+    cursor: pointer;
+    font-size: 18px;
+  }

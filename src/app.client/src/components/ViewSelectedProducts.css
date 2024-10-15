@@ -1,0 +1,50 @@
+
+.ViewSelectedProducts-conteiner {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ViewSelectedProducts-productGrid {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-top: 1rem;
+  min-height: 330px;
+  height: 100%;
+  scroll-behavior: smooth;
+  flex-direction: row;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.ViewSelectedProducts-scroll-button {
+  background-color: #f0f0f0;    /* Color del fondo del botón */
+  border: none;                 /* Sin borde */
+  cursor: pointer;              /* Cambia el cursor a mano */
+  padding: 10px;                /* Espaciado interno */
+  margin: 0 5px;                /* Espaciado alrededor */
+  z-index: 10;                 /* Asegura que los botones estén por encima */
+}
+
+.ViewSelectedProducts-scroll-button.left {
+  left: 10px;                   /* Ajusta la posición a la izquierda */
+}
+
+.ViewSelectedProducts-scroll-button.right {
+  right: 10px;                  /* Ajusta la posición a la derecha */
+}
+
+.ViewSelectedProducts-headerProduct{
+  display: flex;
+  justify-content: space-between;
+}

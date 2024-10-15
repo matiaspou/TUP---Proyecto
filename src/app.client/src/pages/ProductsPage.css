@@ -1,0 +1,33 @@
+.ProductsPage-main{
+  display: grid;
+  grid-template-columns: 13% 87%;
+  grid-template-rows: auto auto 1fr;
+  gap:0px 0px; 
+  grid-template-areas:
+    "Header Header"
+    "Menu Menu "
+    "Categorias Contenido"
+    "Footer Footer"
+    ;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.ProductsPage nav{
+  grid-area: Categorias;
+  height: 100%;
+  width: 100%;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+.ProductsPage article {
+  box-sizing: border-box;
+  padding: 20px;
+  grid-area: Contenido;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}

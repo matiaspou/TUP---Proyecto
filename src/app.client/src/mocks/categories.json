@@ -1,0 +1,84 @@
+[
+      {
+        "id": 1,
+        "nombre": "Equipos y Notebooks"
+      },
+      {
+        "id": 2,
+        "nombre": "Kits de actualización"
+      },
+      {
+        "id": 3,
+        "nombre": "Procesadores"
+      },
+      {
+        "id": 4,
+        "nombre": "Mothers"
+      },
+      {
+        "id": 5,
+        "nombre": "Placas de Video"
+      },
+      {
+        "id": 6,
+        "nombre": "Memorias RAM"
+      },
+      {
+        "id": 7,
+        "nombre": "Almacenamiento"
+      },
+      {
+        "id": 8,
+        "nombre": "Refrigeración"
+      },
+      {
+        "id": 9,
+        "nombre": "Gabinetes"
+      },
+      {
+        "id": 10,
+        "nombre": "Fuentes"
+      },
+      {
+        "id": 11,
+        "nombre": "Monitores"
+      },
+      {
+        "id": 12,
+        "nombre": "Periféricos"
+      },
+      {
+        "id": 13,
+        "nombre": "Sillas Gamers"
+      },
+      {
+        "id": 14,
+        "nombre": "Robots"
+      },
+      {
+        "id": 15,
+        "nombre": "Conectividad"
+      },
+      {
+        "id": 16,
+        "nombre": "Estabilizadores y UPS"
+      },
+      {
+        "id": 17,
+        "nombre": "Cables y Adaptadores"
+      },
+      {
+        "id": 18,
+        "nombre": "Celulares y Smartwatch"
+      },
+      {
+        "id": 19,
+        "nombre": "Impresoras e Insumos"
+      },
+      {
+        "id": 20,
+        "nombre": "Televisores"
+      }
+]
+
+  
