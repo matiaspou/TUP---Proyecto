@@ -1,7 +1,7 @@
 import './HomePage.css'
 import { Header } from '../components/Header.jsx'
-import { MainCategoriasDestacados } from '../components/MainCategoriasDestacados.jsx'
-import { ViewSelectedProducts } from '../components/ViewSelectedProducts.jsx'
+import { MainCategoriasDestacados } from '../components/HomePage/MainCategoriasDestacados.jsx'
+import { ViewSelectedProducts } from '../components/HomePage/ViewSelectedProducts.jsx'
 import { Footer } from '../components/Footer.jsx'
 import { Menu } from '../components/Menu.jsx'
 

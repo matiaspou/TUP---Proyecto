@@ -20,7 +20,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .CardProduct-contenedorTitle{
@@ -41,7 +40,6 @@
   max-width: 140px;
   max-height: 140px;
 }
-
 
 .CardProduct-contenedorBottom{
   display: flex;

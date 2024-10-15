@@ -3,7 +3,7 @@ import { Header } from '../components/Header.jsx'
 import { ProductsDefault } from '../components/ProductsDefault.jsx'
 import { Footer } from '../components/Footer.jsx'
 import { Menu } from '../components/Menu.jsx'
-import { Nav } from '../components/Nav.jsx'
+import { Nav } from '../components/Nav/Nav.jsx'
 
 function ProductsPage() {
 //falta agregar una vista de productos nuevos e imagenes tipo poster

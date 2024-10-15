@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Categories.css';
-import categories from '../mocks/categories.json';
-import circleX from '../assets/circle-x.svg';
-import dot from '../assets/dot-single.svg';
-import minus from '../assets/minus.svg';
-import plus from '../assets/plus.svg';
+import categories from '../../mocks/categories.json';
+import circleX from '../../assets/circle-x.svg';
+import minus from '../../assets/minus.svg';
+import plus from '../../assets/plus.svg';
 
 export function Categories() {
     const [categoryApplicated, setCategoryApplicated] = useState(0);
