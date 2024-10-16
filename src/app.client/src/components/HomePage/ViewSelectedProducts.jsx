@@ -1,7 +1,7 @@
 import './ViewSelectedProducts.css'
 import products from '../../mocks/products.json';
-import React, { useRef } from 'react';
-import { CardProduct } from '../CardProduct';
+import { useRef } from 'react';
+import { CardProduct } from '../CommonsComponents/CardProduct';
 
 export function ViewSelectedProducts ({titulo}) {
     const carouselRef = useRef();
@@ -25,9 +25,10 @@ export function ViewSelectedProducts ({titulo}) {
             carousel.scrollBy({ left: 400, behavior: 'smooth' });
         }
     };
+
     return(
     <>
-    <section class="ViewSelectedProducts-conteiner">
+    <section className="ViewSelectedProducts-conteiner">
         <div className="ViewSelectedProducts-headerProduct">
                 <h2>{titulo}</h2>
                 <div className="ViewSelectedProducts-carrouselButtons">
@@ -39,10 +40,10 @@ export function ViewSelectedProducts ({titulo}) {
                     </button>
                 </div>
         </div>
-        <div class="ViewSelectedProducts-productGrid" ref={carouselRef}>
+        <div className="ViewSelectedProducts-productGrid" ref={carouselRef}>
         {
             products.map(product => (
-                <CardProduct product={product}></CardProduct>
+                <CardProduct product={product} key={product.id}></CardProduct>
             ))}
         </div>
         

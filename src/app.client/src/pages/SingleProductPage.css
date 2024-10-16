@@ -1,0 +1,35 @@
+  .SingleProductPage-Article {
+    grid-area: Contenido;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 5%;
+    gap:0px 0px; 
+    grid-template-areas:
+    "SingleProductPage-Conteiner"
+    "Footer";
+  }
+  .SingleProductPage-Conteiner{
+    grid-area: SingleProductPage-Conteiner;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+  }
+
+  .SingleProductPage-ConteinerTop{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+
+  #SingleProductPage-ConteinerTop img{
+    width: 100px;
+    height: auto;
+  }
+
+  

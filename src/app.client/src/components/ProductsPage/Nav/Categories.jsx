@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Categories.css';
-import categories from '../../mocks/categories.json';
-import circleX from '../../assets/circle-x.svg';
-import minus from '../../assets/minus.svg';
-import plus from '../../assets/plus.svg';
+import categories from '../../../mocks/categories.json';
+import circleX from '../../../assets/circle-x.svg';
+import minus from '../../../assets/minus.svg';
+import plus from '../../../assets/plus.svg';
 
 export function Categories() {
     const [categoryApplicated, setCategoryApplicated] = useState(0);
@@ -13,16 +13,16 @@ export function Categories() {
 
     const [listOfCategoriesIsVisible, setlistOfCategoriesIsVisible] = useState(true);
 
-    // Convertimos el parámetro 'cate' a número al obtenerlo de la URL
+
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         const cate = queryParams.get('cate');
         if (cate) {
-            setCategoryApplicated(Number(cate)); // Convertimos 'cate' a número
+            setCategoryApplicated(Number(cate)); 
         }
     }, [location.search]);
 
-    // Función para navegar y actualizar la categoría seleccionada
+
     const applyCategory = (id, event) => {
         event.preventDefault();
         setCategoryApplicated(id);
@@ -30,7 +30,7 @@ export function Categories() {
         navigate(`?cate=${id}`);
     };
 
-    // Función para obtener el nombre de la categoría por ID
+
     const getCategoryNameById = (id) => {
         const category = categories.find(category => category.id === id);
         return category ? category.nombre : 'Categoría no encontrada';

@@ -1,23 +1,25 @@
 import './ProductsPage.css'
-import { Header } from '../components/Header.jsx'
-import { ProductsDefault } from '../components/ProductsDefault.jsx'
-import { Footer } from '../components/Footer.jsx'
-import { Menu } from '../components/Menu.jsx'
-import { Nav } from '../components/Nav/Nav.jsx'
+import './Pages.css'
+import { Header } from '../components/CommonsComponents/Header.jsx'
+import { ProductsDefault } from '../components/ProductsPage/ProductsDefault.jsx'
+import { Footer } from '../components/CommonsComponents/Footer.jsx'
+import { Menu } from '../components/CommonsComponents/Menu.jsx'
+import { Nav } from '../components/ProductsPage/Nav/Nav.jsx'
 
 function ProductsPage() {
 //falta agregar una vista de productos nuevos e imagenes tipo poster
 
   return (
     <>
-      <div className="ProductsPage-main">
+      <div className="PagesMain">
         <Header/>
         <Menu/>
-        <Nav></Nav>
-        <article>
+        <article className='ProductsPage-Article'>
+            <Nav></Nav>
             <ProductsDefault/>
+            <Footer></Footer>
         </article>
-        <Footer></Footer>
+        
       </div>
     </>
   )

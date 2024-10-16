@@ -1,0 +1,94 @@
+
+header {
+    grid-area: Header;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    background-color: #303030;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+  }
+  
+  .logo img{
+    height: 5rem;
+    width: auto;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #303030;
+    border-color: #ffffff49;
+    border-width: 2px;
+    color: white;
+  }
+  
+  .header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .cart, .profile {
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .cart{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .HideAmountProductsInCart{
+    display: none;
+  }
+
+  .ShowAmountProductsInCart{
+    display: flex;
+    float: none;
+  }
+
+  .cartIcon{
+    display: flex;
+    max-width: 20px;
+  }
+
+  .cartImage{
+    z-index: 0;
+  }
+
+  .AmountProductsInCart-number{
+    height: 10px;
+    position: relative;
+    top: -10px;
+    left: -44px;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: bold;
+    
+  }
+
+  .AmountProductsInCart-circle img{
+    position: relative;
+    top: -10px;
+    left: -31px;
+    height: 18px;
+    width: auto;
+    z-index: 1;
+  }
+
+  .cart{
+    display: flex;
+    align-items: center;
+  }
