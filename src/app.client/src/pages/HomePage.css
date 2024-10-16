@@ -1,0 +1,11 @@
+
+  .HomePage-Article {
+    padding: 20px;
+    grid-area: Contenido;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  

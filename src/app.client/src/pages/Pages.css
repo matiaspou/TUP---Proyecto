@@ -1,0 +1,13 @@
+.PagesMain{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 3% auto;
+    gap: 0px 0px; 
+    grid-template-areas:
+    "Header"
+    "Menu "
+    "Contenido";
+    overflow-y: hidden;
+    height: 100vh;
+    box-sizing: border-box;
+}
