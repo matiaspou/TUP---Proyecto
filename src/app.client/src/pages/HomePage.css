@@ -6,11 +6,24 @@
     flex-direction: column;
     overflow-y: auto;
     box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .HomePage-Conteiner{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    justify-content: center;
   }
   
+  .HomePage-Banner{
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);
+    background-color: black;
+  }
