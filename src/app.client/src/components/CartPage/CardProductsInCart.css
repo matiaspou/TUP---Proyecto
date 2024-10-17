@@ -6,9 +6,9 @@
   border-radius: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  height: 180px;
-  min-width: 100%;
-  width: 250px;
+  min-height: 10rem;
+  max-height: 10rem;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,17 +20,22 @@
 }
 
 .CardProductsInCart-contenedorImg{
-  min-height: 140px;
-  min-width: 140px;
+  width: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
+.CardProductsInCart-contenedorImg a img{
+  max-height: 8rem;
+  width: 100%;
+}
+
 .CardProductsInCart-contenedorTitle{
   font-size: 0.9rem;
   height: 4.5rem;
+  width: 100%;
   text-align: start;
   overflow: hidden;
   box-sizing: border-box;
@@ -49,10 +54,7 @@
 	text-decoration: none;
 }
 
-.CardProductsInCart-product img{
-  max-width: 140px;
-  max-height: 140px;
-}
+
 
 .CardProductsInCart-contenedorBottom{
   display: flex;
@@ -64,11 +66,97 @@
   top: 1.5rem;
 }
 
-.CardProductsInCart-contenedorBottom span{
-  font-size: 1.5rem;
+.CardProductsInCart-ConteinerPrice span{
+  font-size: 1.3rem;
   font-weight: bold;
   pointer-events: none;
 }
 
+.CardProductsInCart-ConteinerPrice h3{
+  font-size: 1rem;
+  font-weight: normal;
+}
 
+.CardProductsInCart-ConteinerPrice{
+  display: flex;
+  align-items: flex-end;
+  gap: 0.4rem;
+  height: 80%;
+  padding-right: 0.3rem;
+}
 
+.CardProductsInCart-QuantityButtons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.CardProductsInCart-QuantityButtons button{
+  height: 1.6rem;
+  font-size: 1rem;
+  width: 1.4rem;
+  cursor: pointer;
+  background-color: hwb(0 100% 0% / 0.986);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);
+  align-items: center; 
+  font-weight: bold;
+  border: none;
+  border-color: rgb(0, 0, 0);
+}
+
+.CardProductsInCart-QuantityButtonPlus{
+  color: hwb(123 8% 45%);
+  border-radius: 0 0.7rem  0.7rem 0;
+}
+
+.CardProductsInCart-QuantityButtonMinus{
+  color: hwb(0 44% 53%);
+  border-radius: 0.7rem 0 0 0.7rem;
+}
+
+.CardProductsInCart-QuantityButtons span{
+  height: 1.6rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 1.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: hwb(0 100% 0% / 0.986);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);
+  pointer-events: none;
+}
+
+.CardProductsInCart-DeleteButton{
+  height: 1.6rem;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  background-color: hwb(0 100% 0% / 0.87);
+  align-items: center; 
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);
+}
+
+.CardProductsInCart-ConteinerButtons{
+  display: flex ;
+  gap: 2rem;
+}
+
+.CardProductsInCart-conteiner2{
+  display: flex;
+  height: 75%;
+  width: 80%;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+}
+
+.CardProdcutsInCart-conteinerBottom{
+  display: flex;
+  justify-content: space-between;
+}

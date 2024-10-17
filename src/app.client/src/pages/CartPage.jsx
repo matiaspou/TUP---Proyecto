@@ -10,7 +10,7 @@ import {Checkout} from '../components/CartPage/Checkout.jsx'
 
 function CartPage() {
 
-  const { getProductsInCart } = useCart();
+  const { getProductsInCart, getPriceTotalOfCart } = useCart();
 
   const productsInCart = getProductsInCart();
 
@@ -25,17 +25,33 @@ function CartPage() {
             <div className="CartPage-ProductsSection">
 
               <div className="CartPage-ProductsGrid">
-                <h3>Productos en el carrito</h3>
-                <hr />
+                <div className="CartPage-ProductsTitle">
+                  <h3>Productos en el carrito</h3>
+                </div>
+
+              <div className="CartPage-ProductsContent">
                 {productsInCart.map(product => ( <CardProductsInCart product={product}></CardProductsInCart>))}
+
+                <hr />
+
+                <div className="CartPage-ProductsPriceTotal">
+                  <h3>Total:</h3> 
+                  <span>${getPriceTotalOfCart()}</span>
+                </div>
+
               </div>
 
+            </div>
+
               <div className="CartPage-Checkout">
-                <h3>Checkout</h3>
-                <hr />
-                <Checkout products={productsInCart}></Checkout>
+                  <div className="CartPage-CheckoutTitle">
+                    <h3>Checkout</h3>
+                  </div>
+                  <div className="CartPage-CheckoutContent">
+                    <Checkout products={productsInCart}></Checkout>
+                  </div>
               </div>
-              
+
             </div>
 
             <div className="CartPage-SelectedProducts">
