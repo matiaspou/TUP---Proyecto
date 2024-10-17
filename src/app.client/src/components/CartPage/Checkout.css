@@ -26,6 +26,7 @@
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+  padding-top: 0.5rem;
 }
 
 .Checkout-inputRadio{
@@ -69,14 +70,18 @@
 
 
 /** //////////////////////////////////**/
+.Checkout-inputTextBox{
+  position: relative;
+  top: -10px;
 
-.Checkout-inputTextBox {
+}
+
+.Checkout-inputTextSubBox {
   position: relative;
   padding: 15px 0 4px ;
   width: 100%;
   display: flex;
   justify-content: flex-start;
-
 }
 
 .Checkout-inputText {
@@ -137,4 +142,11 @@
 /* reset input */
 .Checkout-inputText{
   &:required,&:invalid { box-shadow:none; }
+}
+
+
+.Checkout-Title{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }

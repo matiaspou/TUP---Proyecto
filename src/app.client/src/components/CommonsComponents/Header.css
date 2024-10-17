@@ -49,11 +49,11 @@ header {
   }
 
 
-  .HideAmountProductsInCart{
+  .HideQuantityProductsInCart{
     display: none;
   }
 
-  .ShowAmountProductsInCart{
+  .ShowQuantityProductsInCart{
     display: flex;
     float: none;
   }
@@ -67,7 +67,7 @@ header {
     z-index: 0;
   }
 
-  .AmountProductsInCart-number{
+  .QuantityProductsInCart-number{
     height: 10px;
     position: relative;
     top: -10px;
@@ -79,7 +79,7 @@ header {
     
   }
 
-  .AmountProductsInCart-circle img{
+  .QuantityProductsInCart-circle img{
     position: relative;
     top: -10px;
     left: -31px;

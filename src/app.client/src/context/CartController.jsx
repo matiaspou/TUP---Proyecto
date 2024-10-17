@@ -26,7 +26,7 @@ export const CartController = ({ children }) => {
     var productAddedBefore = productsInCart.find((product) => product.id == idProductToAdd);
     
     if (productAddedBefore) {
-      productAddedBefore.amount += 1;
+      productAddedBefore.quantity += 1;
       setProductsInCart([...productsInCart]);
     } 
 
@@ -38,7 +38,7 @@ export const CartController = ({ children }) => {
         title: productToAdd.title,
         image: productToAdd.image,
         price: productToAdd.price,
-        amount: 1
+        quantity: 1
       };
       setProductsInCart([...productsInCart, mappedProductToAdd]);
     }
@@ -56,12 +56,34 @@ export const CartController = ({ children }) => {
     }
   };
 
-  const getAmountProductsInCart = () => {
-    return productsInCart.reduce((acc, product) => acc + product.amount, 0);
+  const getQuantityProductsInCart = () => {
+    return productsInCart.reduce((acc, product) => acc + product.quantity, 0);
   };
 
+  const updateProductQuantity = (productId, newQuantity) => {
+    setProductsInCart(prevProducts =>
+      prevProducts.map(product => 
+        product.id === productId
+          ? { ...product, quantity: product.quantity+newQuantity } 
+          : product 
+      )
+    );
+  };
+
+  const deleteProductInCart = (id) =>{
+    const productsFiltered = productsInCart.filter(product => product.id !== id);
+    setProductsInCart(productsFiltered)
+  }
+
+  const getPriceTotalOfCart = () => {
+    const priceTotal = productsInCart.reduce((acum, product) => {
+      return acum + (product.price * product.quantity);
+    }, 0);
+    return priceTotal;
+  }
+
   return (
-    <CartContext.Provider value={{ addToCart, getProductsInCart, getAmountProductsInCart, checkIdInCart }}>
+    <CartContext.Provider value={{ addToCart, getProductsInCart, getQuantityProductsInCart, checkIdInCart, updateProductQuantity, deleteProductInCart, getPriceTotalOfCart }}>
       {children}
     </CartContext.Provider>
   );

@@ -5,12 +5,12 @@ import { useCart } from "../../context/CartController.jsx";
 
 export const Header = () => {
 
-    const { getAmountProductsInCart } = useCart();
-    const cartNumber = getAmountProductsInCart();
+    const { getQuantityProductsInCart } = useCart();
+    const cartNumber = getQuantityProductsInCart();
     if (cartNumber > 0)
     {
-        const divAmountProductsInCart = document.getElementById('AmountProductsInCart'); 
-        divAmountProductsInCart.className= 'ShowAmountProductsInCart';
+        const divQuantityProductsInCart = document.getElementById('QuantityProductsInCart'); 
+        divQuantityProductsInCart.className= 'ShowQuantityProductsInCart';
     }
 
     return(
@@ -26,9 +26,9 @@ export const Header = () => {
             <a href="/Cart" className="cart">
                 <div className="cartIcon">
                     <div className="cartImage">🛒</div>
-                    <div className="HideAmountProductsInCart" id='AmountProductsInCart'>
-                        <div className='AmountProductsInCart-circle' ><img src={cartCircle} alt=""  /></div>
-                        <div className='AmountProductsInCart-number' >{cartNumber}</div>
+                    <div className="HideQuantityProductsInCart" id='QuantityProductsInCart'>
+                        <div className='QuantityProductsInCart-circle' ><img src={cartCircle} alt=""  /></div>
+                        <div className='QuantityProductsInCart-number' >{cartNumber}</div>
                     </div>
                 </div>
 
