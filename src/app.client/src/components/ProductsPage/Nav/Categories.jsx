@@ -26,7 +26,7 @@ export function Categories() {
     const applyCategory = (id, event) => {
         event.preventDefault();
         setCategoryApplicated(id);
-        (id!=0) ? setlistOfCategoriesIsVisible(false): setlistOfCategoriesIsVisible(true);;
+        toggleViewCategories();
         navigate(`?cate=${id}`);
     };
 

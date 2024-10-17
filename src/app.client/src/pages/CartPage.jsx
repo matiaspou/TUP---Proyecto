@@ -58,8 +58,8 @@ function CartPage() {
             ) : (
               <div className="CartPage-ProductsEmpty">
                 <span>No hay elementos en el carrito 😔</span>
-                <span>Agregar alguno... 😏😉</span>
-                <button>VER PRODUCTOS</button>
+                <span>Agregá alguno... 😏😉</span>
+                <a href="/products"><button>VER PRODUCTOS</button></a>
               </div>
               )
               }

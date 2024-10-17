@@ -13,13 +13,11 @@ export const CartController = ({ children }) => {
     if(cartLocalStorage){
       setProductsInCart(cartLocalStorage);
     } 
-  }, {children})
+  }, [children])
 
 
   useEffect(() => {
-    if(productsInCart.length>0){
       localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
-    }
   }, [productsInCart])
 
   const addToCart = (idProductToAdd) => {
