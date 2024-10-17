@@ -63,14 +63,14 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);
 }
 
-.Checkout-Buttons button:active {
-  transform: scale(.9);
-}
 
 .Checkout-Buttons button:hover {
   transform: translateY(-5px);
 }
 
+.Checkout-Buttons button:active {
+  transform: scale(.9);
+}
 
 
 
@@ -124,7 +124,7 @@
   color: #9b9b9b;
 }
 
-.Checkout-inputText:hover, :focus {
+.Checkout-inputText:hover, .Checkout-inputText:focus {
   ~.Checkout-inputTextLabel {
     position: absolute;
     top: 0;
@@ -135,7 +135,6 @@
     font-weight:700;   
   }
   padding-bottom: 6px;  
-  font-weight: 700;
   border-width: 3px;
   font-weight: normal;
   font-size: 0.9rem;    

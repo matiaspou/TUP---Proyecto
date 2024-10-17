@@ -100,3 +100,43 @@
 .CartPage-ProductsContent hr{
   width: 100%;
 }
+
+.CartPage-ProductsEmpty{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: auto;
+  height: 30vh;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.CartPage-ProductsEmpty span{
+  font-weight: normal;
+}
+
+.CartPage-ProductsEmpty button{
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  background-color: #52a2ee;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  border-radius: 0.5rem;
+  transition: .20s ;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.CartPage-ProductsEmpty button:hover {
+  transform: translateY(-5px);
+}
+
+.CartPage-ProductsEmpty button:active {
+  transform: scale(.9);
+}

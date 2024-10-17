@@ -25,7 +25,7 @@ export function Checkout ({products}) {
                     </div>
                     <div className='Checkout-inputRadio'>
                         <input type="radio" id="retiroAlmacen" name="methodShipping" value="retiroAlmacen" defaultChecked></input>
-                        <label htmlFor="retiroAlmacen">Retiro en almacen ${}</label>
+                        <label htmlFor="retiroAlmacen">Retiro en almacen $0</label>
                     </div>
                 </form>
             </div>
