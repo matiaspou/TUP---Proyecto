@@ -60,12 +60,17 @@
   border-radius: 0.4rem;
   cursor: pointer;
   transition: .20s ;
-  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);
 }
 
 .Checkout-Buttons button:active {
   transform: scale(.9);
 }
+
+.Checkout-Buttons button:hover {
+  transform: translateY(-5px);
+}
+
 
 
 

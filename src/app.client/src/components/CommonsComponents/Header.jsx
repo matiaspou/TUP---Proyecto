@@ -28,7 +28,7 @@ export const Header = () => {
                     <div className="cartImage">🛒</div>
                     <div className="HideQuantityProductsInCart" id='QuantityProductsInCart'>
                         <div className='QuantityProductsInCart-circle' ><img src={cartCircle} alt=""  /></div>
-                        <div className='QuantityProductsInCart-number' >{cartNumber}</div>
+                        <div className={(cartNumber>9) ? 'QuantityProductsInCart-number2' : 'QuantityProductsInCart-number'}>{cartNumber}</div>
                     </div>
                 </div>
 

@@ -20,7 +20,7 @@ export function CardProductsInCart ({product}) {
                 <div className="CardProdcutsInCart-conteinerBottom">
                     <div className="CardProductsInCart-ConteinerButtons">
                         <div className="CardProductsInCart-QuantityButtons">
-                            <button className="CardProductsInCart-QuantityButtonMinus" onClick={()=>updateProductQuantity(product.id,-1)}>-</button>
+                            <button className="CardProductsInCart-QuantityButtonMinus" onClick={()=>(product.quantity>1)?updateProductQuantity(product.id,-1):"nada"}>-</button>
                             <span>{product.quantity}</span>
                             <button className="CardProductsInCart-QuantityButtonPlus"onClick={()=>updateProductQuantity(product.id,1)}>+</button>
                         </div>
