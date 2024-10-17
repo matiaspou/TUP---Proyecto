@@ -7,9 +7,13 @@ export function ProductCharacteristics () {
             <span>Caracteristicas</span>
             <ul>
                 <li>ejemplo: <span>ejemplo</span></li>
+                <hr></hr>
                 <li>ejemplo: <span>ejemplo</span></li>
+                <hr></hr>
                 <li>ejemplo: <span>ejemplo</span></li>
+                <hr></hr>
                 <li>ejemplo: <span>ejemplo</span></li>
+                <hr></hr>
                 <li>ejemplo: <span>ejemplo</span></li>
             </ul>
         </div>

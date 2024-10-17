@@ -4,8 +4,10 @@ export function Footer () {
     <>
         <footer className="footer">
           <div className="footer-content">
-            <p>© 2024 MiEcommerce</p>
-            <p>Contacto: contacto@miecommerce.com</p>
+            <p>© 2024 DOMination Systems</p>
+            <hr />
+            <p>Contacto: contact@dominationsystems.com</p>
+            <hr />
             <p>Tel: 1234-5678</p>
           </div>
         </footer>

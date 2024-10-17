@@ -3,7 +3,7 @@
   background-color: #fff;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
@@ -28,20 +28,20 @@
 }
 
 .ViewSelectedProducts-scroll-button {
-  background-color: #f0f0f0;    /* Color del fondo del botón */
-  border: none;                 /* Sin borde */
-  cursor: pointer;              /* Cambia el cursor a mano */
-  padding: 10px;                /* Espaciado interno */
-  margin: 0 5px;                /* Espaciado alrededor */
-  z-index: 10;                 /* Asegura que los botones estén por encima */
+  background-color: #f0f0f0;    
+  border: none;                
+  cursor: pointer;             
+  padding: 10px;               
+  margin: 0 5px;               
+  z-index: 10;                
 }
 
 .ViewSelectedProducts-scroll-button.left {
-  left: 10px;                   /* Ajusta la posición a la izquierda */
+  left: 10px;                   
 }
 
 .ViewSelectedProducts-scroll-button.right {
-  right: 10px;                  /* Ajusta la posición a la derecha */
+  right: 10px;                 
 }
 
 .ViewSelectedProducts-headerProduct{

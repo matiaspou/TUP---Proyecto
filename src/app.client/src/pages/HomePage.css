@@ -4,8 +4,13 @@
     grid-area: Contenido;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     overflow-y: auto;
     box-sizing: border-box;
+  }
+
+  .HomePage-Conteiner{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
   

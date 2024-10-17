@@ -1,6 +1,7 @@
   .SingleProductPage-Article {
     grid-area: Contenido;
     padding: 20px;
+    padding-bottom: 0px;
     overflow-y: auto;
     box-sizing: border-box;
     display: grid;

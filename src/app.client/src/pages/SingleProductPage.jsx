@@ -6,8 +6,8 @@ import { Menu } from '../components/CommonsComponents/Menu.jsx'
 import { useEffect, useState } from 'react'
 import productsStock from "../mocks/products.json";
 import { ProductDetails } from '../components/SingleProductPage/ProductDetails.jsx'
-import {  } from '../components/ProductsPage/ProductsDefault.jsx'
 import { ProductCharacteristics } from '../components/SingleProductPage/ProductCharacteristics.jsx'
+import { ViewSelectedProducts } from '../components/CommonsComponents/ViewSelectedProducts.jsx'
 
 function SingleProductPage() {
 
@@ -36,6 +36,7 @@ function SingleProductPage() {
               <ProductDetails product={product}></ProductDetails>
             </div>
             <ProductCharacteristics product={product}></ProductCharacteristics>
+            <ViewSelectedProducts titulo="Productos similiares"></ViewSelectedProducts>
             <Footer></Footer>
           </div>
         </article>

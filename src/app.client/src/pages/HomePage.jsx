@@ -2,7 +2,7 @@ import './HomePage.css'
 import './Pages.css'
 import { Header } from '../components/CommonsComponents/Header.jsx'
 import { MainCategoriasDestacados } from '../components/HomePage/MainCategoriasDestacados.jsx'
-import { ViewSelectedProducts } from '../components/HomePage/ViewSelectedProducts.jsx'
+import { ViewSelectedProducts } from '../components/CommonsComponents/ViewSelectedProducts.jsx'
 import { Footer } from '../components/CommonsComponents/Footer.jsx'
 import { Menu } from '../components/CommonsComponents/Menu.jsx'
 

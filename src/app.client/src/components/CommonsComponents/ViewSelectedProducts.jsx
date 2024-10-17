@@ -1,7 +1,7 @@
 import './ViewSelectedProducts.css'
 import products from '../../mocks/products.json';
 import { useRef } from 'react';
-import { CardProduct } from '../CommonsComponents/CardProduct';
+import { CardProduct } from './CardProduct';
 
 export function ViewSelectedProducts ({titulo}) {
     const carouselRef = useRef();

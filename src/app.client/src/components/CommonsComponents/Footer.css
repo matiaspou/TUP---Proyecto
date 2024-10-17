@@ -7,6 +7,10 @@
   text-align: center;
 }
 
-.footer-content p {
+.footer-content  {
+  display: flex;
   margin: 5px 0;
+  justify-content: space-around;
+  padding-left: 20%;
+  padding-right: 20%;
 }
