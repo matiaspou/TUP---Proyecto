@@ -27,7 +27,7 @@ export function CardProductsInCart ({product}) {
                         <button className='CardProductsInCart-DeleteButton' onClick={()=>deleteProductInCart(product.id)}>Eliminar</button>
                     </div>
                     <div className="CardProductsInCart-ConteinerPrice">
-                        <h3>Subtotal: </h3><span>${product.price*product.quantity}</span>
+                        <h3>Subtotal: </h3><span>${new Intl.NumberFormat('es-AR').format(Math.trunc(product.price*product.quantity))}</span>
                     </div>
                 </div>
             </div>

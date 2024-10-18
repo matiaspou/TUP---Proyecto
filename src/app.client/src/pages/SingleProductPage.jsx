@@ -31,6 +31,7 @@ function SingleProductPage() {
         <Menu/>
         <article className="SingleProductPage-Article">
           <div className="SingleProductPage-Conteiner">
+            <Menu/>
             <div className="SingleProductPage-ConteinerTop">
               <img src={product.image}/> 
               <ProductDetails product={product}></ProductDetails>

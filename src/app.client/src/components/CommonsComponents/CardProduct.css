@@ -43,9 +43,8 @@
 	text-decoration: none;
 }
 
-.CardProduct-product img{
-  max-width: 140px;
-  max-height: 140px;
+.CardProduct-product a img{
+  min-width: 8rem;
 }
 
 .CardProduct-contenedorBottom{
@@ -59,7 +58,7 @@
 }
 
 .CardProduct-contenedorBottom span{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   pointer-events: none;
 }

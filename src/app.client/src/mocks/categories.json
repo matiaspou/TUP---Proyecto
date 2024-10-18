@@ -4,10 +4,6 @@
         "nombre": "Equipos y Notebooks"
       },
       {
-        "id": 2,
-        "nombre": "Kits de actualización"
-      },
-      {
         "id": 3,
         "nombre": "Procesadores"
       },
@@ -50,22 +46,6 @@
       {
         "id": 13,
         "nombre": "Sillas Gamers"
-      },
-      {
-        "id": 14,
-        "nombre": "Robots"
-      },
-      {
-        "id": 15,
-        "nombre": "Conectividad"
-      },
-      {
-        "id": 16,
-        "nombre": "Estabilizadores y UPS"
-      },
-      {
-        "id": 17,
-        "nombre": "Cables y Adaptadores"
       },
       {
         "id": 18,

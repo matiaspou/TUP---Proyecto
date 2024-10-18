@@ -17,9 +17,10 @@ function HomePage() {
     <>
       <div className="PagesMain">
         <Header/>
-        <Menu/>
+        
         <article className="HomePage-Article">
           <div className="HomePage-Conteiner">
+            <Menu/>
             <img className="HomePage-Banner" src={banner3} alt="" />
             <ViewSelectedProducts titulo="Productos destacados"/>
             <img className="HomePage-Banner" src={banner2} alt="" />

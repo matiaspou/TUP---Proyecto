@@ -18,9 +18,10 @@ function CartPage() {
     <>
       <div className="PagesMain">
         <Header/>
-        <Menu/>
+        
         <article className="CartPage-Article">
           <div className="CartPage-Conteiner">
+          <Menu/>
             {productsInCart.length != 0 ? (
             <div className="CartPage-ProductsSection">
 
@@ -38,7 +39,7 @@ function CartPage() {
 
                     <div className="CartPage-ProductsPriceTotal">
                       <h3>Total:</h3> 
-                      <span>${getPriceTotalOfCart()}</span>
+                      <span>${new Intl.NumberFormat('es-AR').format(Math.trunc(getPriceTotalOfCart()))}</span>
                     </div>
                   </div>
                 

@@ -15,6 +15,7 @@
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
+    padding-top: 1rem;
   }
   
   .HomePage-Banner{

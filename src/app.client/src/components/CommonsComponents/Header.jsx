@@ -6,6 +6,7 @@ import { useCart } from "../../context/CartController.jsx";
 export const Header = () => {
 
     const { getQuantityProductsInCart } = useCart();
+    
     const cartNumber = getQuantityProductsInCart();
     if (cartNumber > 0)
     {

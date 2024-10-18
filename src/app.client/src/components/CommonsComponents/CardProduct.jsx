@@ -14,7 +14,7 @@ export function CardProduct ({product}) {
                 <a href={`/product?id=${product.id}`}><span>{product.title}</span></a>
             </div>
             <div className="CardProduct-contenedorBottom">
-                <span>${product.price}</span>
+                <span>${new Intl.NumberFormat('es-AR').format(Math.trunc(product.price))}</span>
                 <ButtonAddToCart productId={product.id}></ButtonAddToCart>
             </div>
         </div>

@@ -1,18 +1,17 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import './Categories.css';
 import categories from '../../../mocks/categories.json';
 import circleX from '../../../assets/circle-x.svg';
 import minus from '../../../assets/minus.svg';
 import plus from '../../../assets/plus.svg';
+import {  useState,  useEffect } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export function Categories() {
+
+    const [listOfCategoriesIsVisible, setlistOfCategoriesIsVisible] = useState(true);
     const [categoryApplicated, setCategoryApplicated] = useState(0);
     const navigate = useNavigate();
     const location = useLocation();
-
-    const [listOfCategoriesIsVisible, setlistOfCategoriesIsVisible] = useState(true);
-
 
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
@@ -21,15 +20,6 @@ export function Categories() {
             setCategoryApplicated(Number(cate)); 
         }
     }, [location.search]);
-
-
-    const applyCategory = (id, event) => {
-        event.preventDefault();
-        setCategoryApplicated(id);
-        toggleViewCategories();
-        navigate(`?cate=${id}`);
-    };
-
 
     const getCategoryNameById = (id) => {
         const category = categories.find(category => category.id === id);
@@ -49,7 +39,13 @@ export function Categories() {
         }
     }
 
-    
+    const applyCategory = (id, event) => {
+        event.preventDefault();
+        setCategoryApplicated(id);
+        toggleViewCategories();
+        navigate(`?cate=${id}`);
+    };
+
 
     return (
         <>  

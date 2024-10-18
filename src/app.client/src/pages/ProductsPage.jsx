@@ -13,8 +13,9 @@ function ProductsPage() {
     <>
       <div className="PagesMain">
         <Header/>
-        <Menu/>
+         
         <article className='ProductsPage-Article'>
+            <Menu/>
             <Nav></Nav>
             <ProductsDefault/>
             <Footer></Footer>

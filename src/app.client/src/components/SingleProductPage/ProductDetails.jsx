@@ -15,8 +15,8 @@ export function ProductDetails (product) {
             <span>{product.product.title}</span>
             <hr />
             <div className="ProductDetails-ConteinerSub1">
-                <div className="ProductDetails-PriceTotal"><span><h4>Precio:</h4>${product.product.price}</span></div>
-                <div className="ProductDetails-PriceInCredit"><span><h4>12 cuotas fijas de</h4> ${(product.product.price/12).toFixed(2)}</span></div>
+                <div className="ProductDetails-PriceTotal"><span><h4>Precio:</h4>${new Intl.NumberFormat('es-AR').format(Math.trunc(product.product.price))}</span></div>
+                <div className="ProductDetails-PriceInCredit"><span><h4>12 cuotas fijas de</h4> ${new Intl.NumberFormat('es-AR').format(Math.trunc(product.product.price/12))}</span></div>
             </div>
             <hr />
             <div className="ProductDetails-ConteinerSub2">
