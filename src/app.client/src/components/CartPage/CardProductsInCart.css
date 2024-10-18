@@ -4,7 +4,7 @@
   padding-right: 1rem;
   text-align: center;
   border-radius: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   min-height: 10rem;
   max-height: 10rem;
@@ -101,6 +101,10 @@
   font-weight: bold;
   border: none;
   border-color: rgb(0, 0, 0);
+}
+
+.CardProductsInCart-product button:hover{
+  background-color: hwb(0 97% 3% / 0.986);
 }
 
 .CardProductsInCart-QuantityButtonPlus{

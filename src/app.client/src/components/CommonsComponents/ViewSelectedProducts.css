@@ -63,7 +63,12 @@
 .ViewSelectedProducts-Header{
   display: flex;
   justify-content: space-between;
-  background-color: rgba(248, 214, 141, 0.514);
+
+  background-color: hsla(0, 0%, 29%, 1);
+    background-image: radial-gradient(circle at 40% 20%, hsla(229, 0%, 29%, 1) 0%, transparent 50%), radial-gradient(circle at 80% 0%, hsla(0, 0%, 21%, 1) 0%, transparent 50%), radial-gradient(circle at 0% 50%, hsla(0, 0%, 19%, 1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, hsla(0, 0%, 23%, 1) 0%, transparent 50%), radial-gradient(circle at 0% 100%, hsla(0, 0%, 29%, 1) 0%, transparent 50%), radial-gradient(circle at 80% 100%, hsla(0, 0%, 15%, 1) 0%, transparent 50%), radial-gradient(circle at 0% 0%, hsla(184.00000000000026, 10%, 14%, 1) 0%, transparent 50%);
+    background-blend-mode: normal, normal, normal, normal, normal, normal, normal;
+  color: white;
+
   height: 2.5rem;
   align-items: center;
   font-size: 0.7rem;

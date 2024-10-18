@@ -5,10 +5,10 @@ import { FeaturedCategories } from '../components/HomePage/FeaturedCategories.js
 import { ViewSelectedProducts } from '../components/CommonsComponents/ViewSelectedProducts.jsx'
 import { Footer } from '../components/CommonsComponents/Footer.jsx'
 import { Menu } from '../components/CommonsComponents/Menu.jsx'
-import banner from "../assets/banners/2659801-amd-ryzen-ai-7-and-3d-vcache-9-banner.avif"
-import banner2 from "../assets/banners/Reward point-Wall Banner-Mobile-1536X640.webp"
+import banner from "../assets/banners/pbaabril2024.jpg"
+import banner2 from "../assets/banners/gaming-pcs-banner_ICUE-CERTIFIED.webp"
 import banner3 from "../assets/banners/banner_still.jpg"
-import banner4 from "../assets/banners/shop-2080-ti-1070@2x.jpg"
+import banner4 from "../assets/banners/geforce-ada-4090-background-image-spec2-bb300_300-l.jpg"
 
 function HomePage() {
 //falta agregar una vista de productos nuevos e imagenes tipo poster
@@ -23,11 +23,11 @@ function HomePage() {
             <Menu/>
             <img className="HomePage-Banner" src={banner3} alt="" />
             <ViewSelectedProducts titulo="Productos destacados"/>
-            <img className="HomePage-Banner" src={banner2} alt="" />
+            <img className="HomePage-Banner" src={banner} alt="" />
             <FeaturedCategories/>
-            <img className="HomePage-Banner" src={banner}  style={{height:"19rem"}}alt="" />
+            <img className="HomePage-Banner" src={banner4}  alt="" />
             <ViewSelectedProducts titulo="Productos agregados recientemente"/>
-            <img className="HomePage-Banner" src={banner4} style={{height:"25rem"}} alt="" />
+            <img className="HomePage-Banner" src={banner2}  alt="" />
             <Footer></Footer>
           </div>
         </article>
