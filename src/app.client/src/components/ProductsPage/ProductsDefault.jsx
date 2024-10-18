@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 export function ProductsDefault() {
     const location = useLocation();
-    const [categoryApplicated, setCategoryApplicated] = useState(0); // Inicializado a 0
+    const [categoryApplicated, setCategoryApplicated] = useState(0); 
     const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export function ProductsDefault() {
         const search = queryParams.get('q');
 
         if (cate) {
-            setCategoryApplicated(Number(cate)); // Convertir el valor de 'cate' a número
+            setCategoryApplicated(Number(cate));
         }
         if (search) {
             setSearchQuery(search);
@@ -27,7 +27,6 @@ export function ProductsDefault() {
             <div className="ProductsDefault-grid">
                 {products
                     .filter(product =>
-                        // Si 'cate' es 0, no filtrar por categoría, solo por búsqueda.
                         (categoryApplicated === 0 || product.category_id === categoryApplicated) &&
                         (searchQuery ? product.title.toLowerCase().includes(searchQuery.toLowerCase()) : true)
                     )

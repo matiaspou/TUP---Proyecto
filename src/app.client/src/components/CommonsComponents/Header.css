@@ -44,10 +44,9 @@ header {
   }
 
   .QuantityProductsInCart-number{
-    height: 10px;
     position: relative;
-    top: -10px;
-    left: -40px;
+    top: -9.5px;
+    left: -39.5px;
     z-index: 2;
     color: rgb(0, 0, 0);
     font-size: 0.85rem;
@@ -55,10 +54,9 @@ header {
   }
 
   .QuantityProductsInCart-number2{
-    height: 10px;
     position: relative;
     top: -7.5px;
-    left: -42.5px;
+    left: -41.5px;
     z-index: 2;
     color: rgb(0, 0, 0);
     font-size: 11px;
@@ -94,6 +92,10 @@ header {
     padding-left: 0.4rem;
     align-items: center;
     pointer-events: none;
+  }
+
+  .SearchBar form{
+    display: flex;
   }
 
   #Search-bar{

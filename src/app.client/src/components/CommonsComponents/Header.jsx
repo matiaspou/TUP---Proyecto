@@ -32,9 +32,6 @@ export const Header = () => {
         }
     };
 
-        
-
-
     return(
     <>
     <header>
@@ -66,7 +63,7 @@ export const Header = () => {
                         <div className="cartTitle">Carrito</div>
                     </a >
                     <hr />
-                    <a href="">👤 Perfil</a>
+                    <a href="/profile">👤 Perfil</a>
                 </div>
         </div>
 

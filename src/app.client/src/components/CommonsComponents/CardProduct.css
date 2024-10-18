@@ -57,8 +57,12 @@
   top: 1.5rem;
 }
 
+.CardProduct-contenedorBottom button{
+  transform: scale(0.8);
+}
+
 .CardProduct-contenedorBottom span{
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   pointer-events: none;
 }

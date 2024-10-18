@@ -18,6 +18,7 @@ function ProductsPage() {
             <div className="ProductsPage-Nav">
                   <div className="ProductsPage-SubContentTitle"></div>
                   <Categories></Categories>
+                  <hr />
                   <Filters></Filters>
             </div>
             <article className='ProductsPage-ProductGrid'>

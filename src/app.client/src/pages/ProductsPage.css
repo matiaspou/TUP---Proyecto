@@ -28,6 +28,12 @@
   gap: 1rem;
   width: 13%;
 }
+.ProductsPage-Nav hr {
+  width: 85%;
+  margin: auto;
+  border-color: rgba(202, 202, 202, 0.425);
+}
+
 
 .ProductsPage-ProductGrid{
   width: 87%;
