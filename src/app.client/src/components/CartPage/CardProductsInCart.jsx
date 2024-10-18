@@ -31,9 +31,7 @@ export function CardProductsInCart ({product}) {
                     </div>
                 </div>
             </div>
-            
-            
-            
+                
         </div>
     </>
     )

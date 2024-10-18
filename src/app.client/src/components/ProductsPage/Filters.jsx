@@ -28,14 +28,14 @@ export function Filters() {
     };
 
     const toggleViewCategories = () =>{
-        const listOfCategories = document.getElementById("Categories-ListOfCategories")
-        if(listOfCategories.className == "Categories-HideListOfCategories")
+        const listOfCategories = document.getElementById("Filters-ListOfCategories")
+        if(listOfCategories.className == "Filters-HideListOfCategories")
         {
-            listOfCategories.className = "Categories-ShowListOfCategories";
+            listOfCategories.className = "Filters-ShowListOfCategories";
             setlistOfCategoriesIsVisible(true);
         }
         else{
-            listOfCategories.className = "Categories-HideListOfCategories";
+            listOfCategories.className = "Filters-HideListOfCategories";
             setlistOfCategoriesIsVisible(false);
         }
     }
@@ -50,17 +50,17 @@ export function Filters() {
 
     return (
         <>  
-            <div className="Categories-Conteiner">
-                <button className={categoryApplicated ? "Categories-ShowCategoryApplicated" : "Categories-HideCategoryApplicated"} onClick={(event) => applyCategory(0, event)}>
+            <div className="Filters-Conteiner">
+                <button className={categoryApplicated ? "Filters-ShowCategoryApplicated" : "Filters-HideCategoryApplicated"} onClick={(event) => applyCategory(0, event)}>
                         {categoryApplicated ? getCategoryNameById(categoryApplicated) : 'Seleccione una categoría'}<img src={circleX} alt="" />
                 </button>
 
-                <button className="Categories-Title" onClick={toggleViewCategories} >
+                <button className="Filters-Title" onClick={toggleViewCategories} >
                 🧐 Filtros
-                    <img src={listOfCategoriesIsVisible ? minus : plus} className="Categories-TitleIcon" alt=""/>
+                    <img src={listOfCategoriesIsVisible ? minus : plus} className="Filters-TitleIcon" alt=""/>
                 </button>
 
-                <ul className={categoryApplicated ? "Categories-HideListOfCategories" : "Categories-ShowListOfCategories"} id='Categories-ListOfCategories'>
+                {/* <ul className={categoryApplicated ? "Filters-HideListOfCategories" : "Filters-ShowListOfCategories"} id='Filters-ListOfCategories'>
                     {categories.map((category) => (
                         <li key={category.id}>
                             <a
@@ -70,8 +70,8 @@ export function Filters() {
                             </a>
                         </li>
                     ))}
-                </ul>
-
+                </ul> */}
+            
             </div>
         </>
     );

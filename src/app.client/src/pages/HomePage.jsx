@@ -4,7 +4,6 @@ import { Header } from '../components/CommonsComponents/Header.jsx'
 import { FeaturedCategories } from '../components/HomePage/FeaturedCategories.jsx'
 import { ViewSelectedProducts } from '../components/CommonsComponents/ViewSelectedProducts.jsx'
 import { Footer } from '../components/CommonsComponents/Footer.jsx'
-import { Menu } from '../components/CommonsComponents/Menu.jsx'
 import banner from "../assets/banners/pbaabril2024.jpg"
 import banner2 from "../assets/banners/gaming-pcs-banner_ICUE-CERTIFIED.webp"
 import banner3 from "../assets/banners/banner_still.jpg"
@@ -20,7 +19,6 @@ function HomePage() {
         
         <article className="HomePage-Article">
           <div className="HomePage-Conteiner">
-            <Menu/>
             <img className="HomePage-Banner" src={banner3} alt="" />
             <ViewSelectedProducts titulo="Productos destacados"/>
             <img className="HomePage-Banner" src={banner} alt="" />

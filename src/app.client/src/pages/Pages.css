@@ -6,7 +6,7 @@
     grid-template-areas:
     "Header"
     "Contenido";
-    overflow-y: hidden;
     height: 100vh;
     box-sizing: border-box;
+    overflow-y: auto;
 }

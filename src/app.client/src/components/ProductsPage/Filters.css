@@ -1,12 +1,13 @@
-.Categories-Conteiner{
+.Filters-Conteiner{
   padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 
-.Categories-HideListOfCategories {
+.Filters-HideListOfCategories {
   display: none;
 }
 
-.Categories-ShowListOfCategories{
+.Filters-ShowListOfCategories{
   padding-left: 1rem;
   list-style: none;
   display: flex; 
@@ -14,18 +15,18 @@
   gap: 10px;
 }
 
-#Categories-ListOfCategories li a {
+#Filters-ListOfCategories li a {
   display: block;
   text-decoration: none;
   color: #333;
   font-weight: normal;
 }
 
-#Categories-ListOfCategories li a:hover {
+#Filters-ListOfCategories li a:hover {
   color: rgba(117, 189, 231, 0.911);
 }
 
-.Categories-ShowCategoryApplicated{
+.Filters-ShowCategoryApplicated{
   display: flex;
   justify-content: space-around;
   padding: 0.4rem ;
@@ -40,18 +41,18 @@
   cursor: pointer;
 }
 
-.Categories-ShowCategoryApplicated img{
+.Filters-ShowCategoryApplicated img{
   height: 1rem;
 }
-.Categories-HideCategoryApplicated{
+.Filters-HideCategoryApplicated{
   display: none;
 }
 
-.Categories-TitleIcon{
+.Filters-TitleIcon{
   height: 0.8rem;
 }
 
-.Categories-Title{
+.Filters-Title{
   border: none;
   background-color: transparent;
   font-size: 1rem;
@@ -65,7 +66,7 @@
   font-weight: bold;
 }
 
-.Categories-Title:hover{
+.Filters-Title:hover{
   cursor: pointer;
   color: #004691;
 }

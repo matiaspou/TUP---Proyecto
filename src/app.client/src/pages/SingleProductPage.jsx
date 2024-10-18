@@ -2,7 +2,6 @@ import './SingleProductPage.css'
 import './Pages.css'
 import { Header } from '../components/CommonsComponents/Header.jsx'
 import { Footer } from '../components/CommonsComponents/Footer.jsx'
-import { Menu } from '../components/CommonsComponents/Menu.jsx'
 import { useEffect, useState } from 'react'
 import productsStock from "../mocks/products.json";
 import { ProductDetails } from '../components/SingleProductPage/ProductDetails.jsx'
@@ -29,7 +28,6 @@ function SingleProductPage() {
         <Header/>
         <article className="SingleProductPage-Article">
           <div className="SingleProductPage-Conteiner">
-            <Menu/>
             <div className="SingleProductPage-ConteinerTop">
               <div className="SingleProductPage-TitleView">Detalles del producto</div>
 

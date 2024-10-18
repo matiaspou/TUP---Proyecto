@@ -3,7 +3,6 @@
     grid-area: Contenido;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
     box-sizing: border-box;
     padding-left: 10%;
     padding-right: 10%;
