@@ -1,0 +1,71 @@
+.Categories-Conteiner{
+  padding-left: 1rem;
+}
+
+.Categories-HideListOfCategories {
+  display: none;
+}
+
+.Categories-ShowListOfCategories{
+  padding-left: 1rem;
+  list-style: none;
+  display: flex; 
+  flex-direction: column;
+  gap: 10px;
+}
+
+#Categories-ListOfCategories li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+}
+
+#Categories-ListOfCategories li a:hover {
+  color: rgba(117, 189, 231, 0.911);
+}
+
+.Categories-ShowCategoryApplicated{
+  display: flex;
+  justify-content: space-around;
+  padding: 0.4rem ;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  background-color: rgba(117, 190, 231, 0.726);
+  border-radius: 10px 10px;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Categories-ShowCategoryApplicated img{
+  height: 1rem;
+}
+.Categories-HideCategoryApplicated{
+  display: none;
+}
+
+.Categories-TitleIcon{
+  height: 0.8rem;
+}
+
+.Categories-Title{
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+.Categories-Title:hover{
+  cursor: pointer;
+  color: #004691;
+}
