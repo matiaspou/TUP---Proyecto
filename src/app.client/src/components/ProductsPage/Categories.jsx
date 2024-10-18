@@ -1,10 +1,11 @@
 import './Categories.css';
-import categories from '../../../mocks/categories.json';
-import circleX from '../../../assets/circle-x.svg';
-import minus from '../../../assets/minus.svg';
-import plus from '../../../assets/plus.svg';
+import categories from '../../mocks/categories.json';
+import circleX from '../../assets/circle-x.svg';
+import minus from '../../assets/minus.svg';
+import plus from '../../assets/plus.svg';
 import {  useState,  useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+
 
 export function Categories() {
 
@@ -55,7 +56,7 @@ export function Categories() {
                 </button>
 
                 <button className="Categories-Title" onClick={toggleViewCategories} >
-                    Categorias
+                🏷️ Categorias
                     <img src={listOfCategoriesIsVisible ? minus : plus} className="Categories-TitleIcon" alt=""/>
                 </button>
 
@@ -64,7 +65,7 @@ export function Categories() {
                         <li key={category.id}>
                             <a
                                 onClick={(event) => applyCategory(category.id, event)}
-                                href={`?cate=${category.id}`}> {/* El href también navega */}
+                                href={`?cate=${category.id}`}> 
                                 {category.nombre}
                             </a>
                         </li>

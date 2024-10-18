@@ -18,18 +18,11 @@ export function ProductsDefault () {
 
     return(
     <>
-    <section className="ProductsDefault-conteiner">
-                <div className="ProductsDefault-grid" >
-                    {(categoryApplicated!=0) ?
-                    products.map(product => (
-                        categoryApplicated == product.category_id ? (
-                            <CardProduct key={product.id} product={product} />
-                        ) : null
-                    )) : products.map(product => (
-                            <CardProduct key={product.id} product={product} />
-                    ))
-                    }
-                </div>
-    </section>
+        <div className="ProductsDefault-grid" >
+            {(categoryApplicated!=0) ? products.map(product => (categoryApplicated == product.category_id ? 
+            (<CardProduct key={product.id} product={product} />) : null)) : 
+            products.map(product => (<CardProduct key={product.id} product={product} />))
+            }
+        </div>
     </>
 )}

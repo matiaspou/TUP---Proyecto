@@ -1,6 +1,5 @@
 .ProductDetails-Conteiner{
-    height: 100%;
-    width: 40%;
+    width: 100%;
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     padding: 20px;
@@ -14,6 +13,7 @@
 .ProductDetails-Identity{
     display:flex;
     justify-content: end;
+    gap: 0.5rem;
 }
 
 .ProductDetails-ID{
@@ -61,11 +61,7 @@
     color: rgb(95, 202, 95);
 }
 
-.ProductDetails-ConteinerSub2 span{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+
 
 .ProductDetails-ConteinerSub2 img{
     height: 1.7rem;
@@ -87,4 +83,17 @@
     font-size: 1.4rem;
     justify-content: flex-start;
     
+}
+
+.ProductDetails-ConteinerSub2 span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+.ProductDetails-IconBeneficts{
+    height: 1.7rem;
+    width: 1.7rem;
 }

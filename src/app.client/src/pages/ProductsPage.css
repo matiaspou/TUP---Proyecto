@@ -1,29 +1,41 @@
-.ProductsPage-Article{
+.ProductsPage-Main{
   display: grid;
-  grid-template-columns: 13% 87%;
-  grid-template-rows: 5rem auto auto;
-  gap:0px 0px; 
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 8% 9% auto;
+  gap: 0px 0px; 
   grid-template-areas:
-    "Menu Menu"
-    "NavCategorias Contenido"
-    "Footer Footer";
-  overflow-y: auto;
+  "Header Header"
+  "Menu Menu"
+  "NavCategorias Contenido";
+  
+  overflow-y: hidden;
+  height: 100vh;
   box-sizing: border-box;
 }
 
-.ProductsPage nav{
-  grid-area: NavCategorias;
-  height: 100%;
-  width: 100%;
-  padding-left: 2rem;
-  padding-top: 2rem;
-}
-
-.ProductsPage article {
-  box-sizing: border-box;
-  padding: 20px;
+.ProductsPage-Content{
   grid-area: Contenido;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
 }
+
+.ProductsPage-Nav
+{
+  grid-area: NavCategorias;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.158);
+  width: 95%;
+  margin-left: auto;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: auto;
+
+}
+

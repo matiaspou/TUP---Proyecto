@@ -6,7 +6,6 @@ import { Menu } from '../components/CommonsComponents/Menu.jsx'
 import { useEffect, useState } from 'react'
 import productsStock from "../mocks/products.json";
 import { ProductDetails } from '../components/SingleProductPage/ProductDetails.jsx'
-import { ProductCharacteristics } from '../components/SingleProductPage/ProductCharacteristics.jsx'
 import { ViewSelectedProducts } from '../components/CommonsComponents/ViewSelectedProducts.jsx'
 
 function SingleProductPage() {
@@ -28,15 +27,18 @@ function SingleProductPage() {
     <>
       <div className="PagesMain">
         <Header/>
-        <Menu/>
         <article className="SingleProductPage-Article">
           <div className="SingleProductPage-Conteiner">
             <Menu/>
             <div className="SingleProductPage-ConteinerTop">
-              <img src={product.image}/> 
-              <ProductDetails product={product}></ProductDetails>
+              <div className="SingleProductPage-TitleView">Detalles del producto</div>
+
+              <div className="SingleProductPage-DetailsProduct">
+                <div className="SingleProductPage-ImgProduct"><img src={product.image}/></div>
+                <ProductDetails product={product}></ProductDetails>
+              </div>
+              
             </div>
-            <ProductCharacteristics product={product}></ProductCharacteristics>
             <ViewSelectedProducts titulo="Productos similiares"></ViewSelectedProducts>
             <Footer></Footer>
           </div>

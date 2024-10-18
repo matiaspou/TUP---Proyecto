@@ -1,63 +1,63 @@
 [
       {
         "id": 1,
-        "nombre": "Equipos y Notebooks"
+        "nombre": "💻 Equipos y Notebooks"
       },
       {
         "id": 3,
-        "nombre": "Procesadores"
+        "nombre": "🧠 Procesadores"
       },
       {
         "id": 4,
-        "nombre": "Mothers"
+        "nombre": "🖧 Mothers"
       },
       {
         "id": 5,
-        "nombre": "Placas de Video"
+        "nombre": "🎮 Placas de Video"
       },
       {
         "id": 6,
-        "nombre": "Memorias RAM"
+        "nombre": "🔋 Memorias RAM"
       },
       {
         "id": 7,
-        "nombre": "Almacenamiento"
+        "nombre": "💾 Almacenamiento"
       },
       {
         "id": 8,
-        "nombre": "Refrigeración"
+        "nombre": "🌬️ Refrigeración"
       },
       {
         "id": 9,
-        "nombre": "Gabinetes"
+        "nombre": "🗄️ Gabinetes"
       },
       {
         "id": 10,
-        "nombre": "Fuentes"
+        "nombre": "⚡ Fuentes"
       },
       {
         "id": 11,
-        "nombre": "Monitores"
+        "nombre": "🖥️ Monitores"
       },
       {
         "id": 12,
-        "nombre": "Periféricos"
+        "nombre": "🖱️ Periféricos"
       },
       {
         "id": 13,
-        "nombre": "Sillas Gamers"
+        "nombre": "🪑 Sillas Gamers"
       },
       {
         "id": 18,
-        "nombre": "Celulares y Smartwatch"
+        "nombre": "📱 Celulares y ⌚ Smartwatch"
       },
       {
         "id": 19,
-        "nombre": "Impresoras e Insumos"
+        "nombre": "🖨️ Impresoras e Insumos"
       },
       {
         "id": 20,
-        "nombre": "Televisores"
+        "nombre": "📺 Televisores"
       }
 ]
 

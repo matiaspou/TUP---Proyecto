@@ -28,13 +28,14 @@ export function ViewSelectedProducts ({titulo}) {
 
     return(
     <>
-    <section className="ViewSelectedProducts-conteiner">
-        <div className="ViewSelectedProducts-headerProduct">
+    <section className="ViewSelectedProducts-Conteiner">
+        <div className="ViewSelectedProducts-Header">
                 <h2>{titulo}</h2>
                 <div className="ViewSelectedProducts-carrouselButtons">
                     <button className="ViewSelectedProducts-scroll-button left" onClick={scrollLeft}>
                         &lt;
                     </button>
+                    <hr />
                     <button className="ViewSelectedProducts-scroll-button right" onClick={scrollRight}>
                         &gt;
                     </button>
@@ -46,7 +47,6 @@ export function ViewSelectedProducts ({titulo}) {
                 <CardProduct product={product} key={product.id}></CardProduct>
             ))}
         </div>
-        
     </section>
     </>
 )}

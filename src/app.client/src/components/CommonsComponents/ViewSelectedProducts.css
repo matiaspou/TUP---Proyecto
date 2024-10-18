@@ -1,13 +1,11 @@
 
-.ViewSelectedProducts-conteiner {
+.ViewSelectedProducts-Conteiner {
   background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
+  border-radius: 1rem;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
-  height: 420px;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -15,36 +13,62 @@
 
 .ViewSelectedProducts-productGrid {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding-top: 1rem;
-  min-height: 330px;
-  height: 100%;
-  scroll-behavior: smooth;
   flex-direction: row;
+  gap: 20px;
+  scroll-behavior: smooth;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
+  padding: 1rem;
+}
+
+.ViewSelectedProducts-carrouselButtons{
+  display: flex;
+  flex-direction: row;
+  gap: 0;  
+  
+}
+.ViewSelectedProducts-carrouselButtons hr{
+  color: #fdfdfd;
+  border-color: #cecece60;
 }
 
 .ViewSelectedProducts-scroll-button {
-  background-color: #f0f0f0;    
+  background-color: #fafafa;   
   border: none;                
   cursor: pointer;             
-  padding: 10px;               
-  margin: 0 5px;               
-  z-index: 10;                
+  padding: 10px;                              
+  z-index: 10;  
+  height: 1.5rem;
+  display: flex;
+  align-items: center;              
 }
 
-.ViewSelectedProducts-scroll-button.left {
-  left: 10px;                   
+.ViewSelectedProducts-scroll-button:hover {
+  background-color: #f3f3f3;                
+}
+
+.ViewSelectedProducts-scroll-button.left { 
+  color: hwb(0 6% 94%);
+  border-radius: 0.7rem 0 0 0.7rem;  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);            
 }
 
 .ViewSelectedProducts-scroll-button.right {
-  right: 10px;                 
+  color: hwb(0 0% 100%);
+  border-radius: 0 0.7rem  0.7rem 0;  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);    
 }
 
-.ViewSelectedProducts-headerProduct{
+.ViewSelectedProducts-Header{
   display: flex;
   justify-content: space-between;
+  background-color: rgba(248, 214, 141, 0.514);
+  height: 2.5rem;
+  align-items: center;
+  font-size: 0.7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
+
+

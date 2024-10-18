@@ -1,7 +1,7 @@
 import './HomePage.css'
 import './Pages.css'
 import { Header } from '../components/CommonsComponents/Header.jsx'
-import { MainCategoriasDestacados } from '../components/HomePage/MainCategoriasDestacados.jsx'
+import { FeaturedCategories } from '../components/HomePage/FeaturedCategories.jsx'
 import { ViewSelectedProducts } from '../components/CommonsComponents/ViewSelectedProducts.jsx'
 import { Footer } from '../components/CommonsComponents/Footer.jsx'
 import { Menu } from '../components/CommonsComponents/Menu.jsx'
@@ -24,7 +24,7 @@ function HomePage() {
             <img className="HomePage-Banner" src={banner3} alt="" />
             <ViewSelectedProducts titulo="Productos destacados"/>
             <img className="HomePage-Banner" src={banner2} alt="" />
-            <MainCategoriasDestacados/>
+            <FeaturedCategories/>
             <img className="HomePage-Banner" src={banner}  style={{height:"19rem"}}alt="" />
             <ViewSelectedProducts titulo="Productos agregados recientemente"/>
             <img className="HomePage-Banner" src={banner4} style={{height:"25rem"}} alt="" />

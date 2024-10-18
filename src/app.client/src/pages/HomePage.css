@@ -1,6 +1,5 @@
 
   .HomePage-Article {
-    padding: 20px;
     grid-area: Contenido;
     display: flex;
     flex-direction: column;
@@ -15,7 +14,7 @@
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
   
   .HomePage-Banner{

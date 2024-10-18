@@ -1,6 +1,6 @@
 .CartPage-Article {
   padding: 20px;
-  padding-top: 30px;
+  padding-top: 1.5rem;
   grid-area: Contenido;
   display: flex;
   flex-direction: column;

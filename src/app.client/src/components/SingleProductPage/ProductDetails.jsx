@@ -9,7 +9,8 @@ export function ProductDetails (product) {
     return(
     <>  
         <div className="ProductDetails-Conteiner">
-        <div className="ProductDetails-Identity">
+            <div className="ProductDetails-Identity">
+                <span className='ProductDetails-ID'>{product.product.category_name}</span>
                 <span className='ProductDetails-ID'>ID:{product.product.id}</span>
             </div>
             <span>{product.product.title}</span>
@@ -20,9 +21,9 @@ export function ProductDetails (product) {
             </div>
             <hr />
             <div className="ProductDetails-ConteinerSub2">
-                <span><img src={securityIcon} />Garantía - 36 meses.</span>
-                <span><img src={stockIcon} />Stock disponible.</span>
-                <span><img src={deliveryIcon} />Envíos a todo el país.</span>
+                <span><img className="ProductDetails-IconBeneficts" src={securityIcon} />Garantía - 36 meses.</span>
+                <span><img className="ProductDetails-IconBeneficts" src={stockIcon} />Stock disponible.</span>
+                <span><img className="ProductDetails-IconBeneficts" src={deliveryIcon} />Envíos a todo el país.</span>
             </div>
             <div className="ProductDetails-ButtonAddToCart">
                 <ButtonAddToCart productId={product.product.id}></ButtonAddToCart>
