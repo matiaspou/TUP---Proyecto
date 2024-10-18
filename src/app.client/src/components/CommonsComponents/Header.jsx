@@ -2,17 +2,38 @@ import './Header.css'
 import logo from '../../assets/DOMinationSystemsLogo.png';
 import cartCircle from '../../assets/cart-circle.svg';
 import { useCart } from "../../context/CartController.jsx";
+import { useLocation, useNavigate } from 'react-router-dom';
+
 
 export const Header = () => {
-
     const { getQuantityProductsInCart } = useCart();
-    
     const cartNumber = getQuantityProductsInCart();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
     if (cartNumber > 0)
     {
         const divQuantityProductsInCart = document.getElementById('QuantityProductsInCart'); 
         divQuantityProductsInCart.className= 'ShowQuantityProductsInCart';
     }
+
+    const searchProduct = (event) =>{
+        event.preventDefault(); 
+        console.log("Entree!");
+        
+        const queryInput = document.getElementById("Search-bar").value;
+        const queryParams = new URLSearchParams(location.search);
+        const cate = queryParams.get('cate');
+        if (cate) {
+            navigate(`/products?cate=${cate}&q=${queryInput}`);
+        } else {
+            navigate(`/products?q=${queryInput}`);
+        }
+    };
+
+        
+
 
     return(
     <>
@@ -24,7 +45,7 @@ export const Header = () => {
         <div className="SearchBar">
             <div className="SearchBar-Header"> 🔍 </div>
             <hr />
-            <input type="text" id="Search-bar" placeholder="Notebook Asus VivoBook 14, Ryzen 7, Nvidia GTX, Disco SSD..."></input>
+            <form onSubmit={searchProduct}><input type="text" id="Search-bar"  placeholder="Notebook Asus VivoBook 14, Ryzen 7, Nvidia GTX, Disco SSD..."></input></form>
         </div>
         
 

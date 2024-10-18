@@ -30,9 +30,10 @@
   align-items: center;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
-  background-color: #fcfcfc;
+  background-color: rgb(247, 247, 247);
   width: 50%;
   box-sizing: border-box;
+  margin-bottom: auto;
 }
 
 .CartPage-Checkout{
@@ -41,9 +42,10 @@
   align-items: center;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
-  background-color: #fcfcfc;
+  background-color: rgb(247, 247, 247);
   width: 25%;
   box-sizing: border-box;
+  margin-bottom: auto;
 }
 
 .CartPage-CheckoutTitle, .CartPage-ProductsTitle{
@@ -56,15 +58,16 @@
   color: rgb(255, 255, 255);
 }
 
-.CartPage-CheckoutTitle{
+.CartPage-CheckoutTitle, .CartPage-ProductsTitle{
   background-color: #2e2e2e;
   color: white;
 }
 
-.CartPage-ProductsTitle{
-  background-color: #2e2e2e;
-  color: white;
+.CartPage-CheckoutTitle h3, .CartPage-ProductsTitle h3 {
+  font-size: 1rem;
 }
+
+
 
 .CartPage-CheckoutContent, .CartPage-ProductsContent{
   padding: 20px;

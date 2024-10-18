@@ -51,9 +51,9 @@ export function Filters() {
     return (
         <>  
             <div className="Filters-Conteiner">
-                <button className={categoryApplicated ? "Filters-ShowCategoryApplicated" : "Filters-HideCategoryApplicated"} onClick={(event) => applyCategory(0, event)}>
+                {/* <button className={categoryApplicated ? "Filters-ShowCategoryApplicated" : "Filters-HideCategoryApplicated"} onClick={(event) => applyCategory(0, event)}>
                         {categoryApplicated ? getCategoryNameById(categoryApplicated) : 'Seleccione una categoría'}<img src={circleX} alt="" />
-                </button>
+                </button> */}
 
                 <button className="Filters-Title" onClick={toggleViewCategories} >
                 🧐 Filtros
@@ -71,7 +71,7 @@ export function Filters() {
                         </li>
                     ))}
                 </ul> */}
-            
+
             </div>
         </>
     );
