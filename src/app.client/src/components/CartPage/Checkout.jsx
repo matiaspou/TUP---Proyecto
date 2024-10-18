@@ -6,26 +6,27 @@ export function Checkout({ products }) {
   const [total, setTotal] = useState(0);
   const [isInitialized, setIsInitialized] = useState(false);
 
-
   useEffect(() => {
     // Llamada al servidor PHP para obtener el preference_id
-    fetch('http://localhost/TUP---Proyecto/src/app.server/index.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(products) // Envía los productos al backend
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.preference_id) {
-          setPreferenceId(data.preference_id); // Establece el preferenceId obtenido
-          setTotal(data.total); // Establece el total obtenido
-        } else {
-          console.error('No se recibió preference_id del servidor.');
-        }
+    if (products.length > 0) { // Asegúrate de que haya productos
+      fetch('http://localhost/TUP---Proyecto/src/app.server/index.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(products) // Envía los productos al backend
       })
-      .catch(error => console.error('Error al obtener la preferencia:', error));
+        .then(response => response.json())
+        .then(data => {
+          if (data.preference_id) {
+            setPreferenceId(data.preference_id); // Establece el preferenceId obtenido
+            setTotal(data.total); // Establece el total obtenido
+          } else {
+            console.error('No se recibió preference_id del servidor.');
+          }
+        })
+        .catch(error => console.error('Error al obtener la preferencia:', error));
+    }
   }, [products]);
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export function Checkout({ products }) {
         },
         customization: {
           texts: {
-            action: "pagar",
+            action: "Pagar",
             valueProp: 'security_safety',
           },
         },
@@ -60,11 +61,18 @@ export function Checkout({ products }) {
   return (
     <div className="Checkout-Container">
       <div className="Checkout-Box">
-        <h3>Envio</h3>
+        <h3>Envío</h3>
         <hr />
         <form>
           <div className="Checkout-inputTextBox">
-            <input type="input" className="Checkout-inputText" placeholder="postalCode" name="postalCode" id="postalCode" required />
+            <input 
+              type="text" 
+              className="Checkout-inputText" 
+              placeholder="Código Postal" 
+              name="postalCode" 
+              id="postalCode" 
+              required 
+            />
             <label htmlFor="postalCode" className="Checkout-inputTextLabel">Código postal</label>
           </div>
           <div className='Checkout-inputRadio'>

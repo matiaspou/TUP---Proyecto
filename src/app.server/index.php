@@ -4,11 +4,6 @@ header("Access-Control-Allow-Origin: *"); // Permite el acceso desde cualquier o
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Métodos permitidos
 header("Access-Control-Allow-Headers: Content-Type"); // Encabezados permitidos
 
-/**
- * Integración básica de Checkout Pro de Mercado Pago
- * usando el SDK versión 3 para PHP
- */
-
 // Desactiva la notificación de errores deprecados en PHP
 error_reporting(E_ALL & ~E_DEPRECATED);
 
@@ -29,18 +24,28 @@ $client = new PreferenceClient();
 $products = json_decode(file_get_contents('php://input'), true);
 
 // Asegúrate de que se reciben los productos y se calculan los totales
-if (isset($products) && is_array($products) && count($products) > 0) {
+if (isset($products) && is_array($products)) {
+    // Verifica si el arreglo de productos está vacío
+    if (count($products) === 0) {
+        // Si no hay productos, puedes manejar la preferencia como desees
+        echo json_encode(['preference_id' => null, 'total' => 0]); // Respuesta con preferencia nula y total 0
+        return; // Salir de la ejecución
+    }
+    
     $items = [];
     $total = 0;
 
     foreach ($products as $product) {
+        // Asegúrate de que 'quantity' se esté enviando correctamente desde el frontend
+        $quantity = isset($product['quantity']) ? (int)$product['quantity'] : 1; // Por defecto, 1 si no se encuentra
+
         $items[] = [
             "id" => $product['id'],
             "title" => $product['title'],
-            "quantity" => 1,
+            "quantity" => $quantity, // Usa la cantidad del producto
             "unit_price" => (float)$product['price'],
         ];
-        $total += $product['price'];
+        $total += $product['price'] * $quantity; // Multiplica el precio por la cantidad
     }
 
     // Crea una preferencia de pago con los detalles del producto
