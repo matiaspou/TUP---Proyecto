@@ -2,15 +2,16 @@ import './ControlDashboard.css'
 import { useState } from 'react';
 import Users from './Views/Users.jsx'; 
 import Products from './Views/Products.jsx';
+import Orders from './Views/Orders.jsx';
+import logo from '../assets/DOMinationSystemsLogo.png';
 
 export const ControlDashboard = () => {
 
-    const [selectedSection, setSelectedSection] = useState('Users');
+    const [selectedSection, setSelectedSection] = useState('Products');
 
     const sectionSelected = (section) => {
         setSelectedSection(section);
         console.log(selectedSection);
-        
     };
 
     const renderSection = () => {
@@ -20,7 +21,7 @@ export const ControlDashboard = () => {
             case 'Users':
                 return <Users />;
             case 'Orders':
-                return <Users />;
+                return <Orders />;
             case 'Statistics':
                 return <Users />;
             default:
@@ -32,15 +33,17 @@ export const ControlDashboard = () => {
         <>
             <div className="ControlDashboard-Container">
                 <div className="ControlDashboard-Header">
+                    <a href="/"><img src={logo} alt='Logo de DOMination System'/></a>
                     <div className="ControlDashboard-HeaderButtons">
-                        <button className={selectedSection === 'Products' ? 'selected' : ''} onClick={() => sectionSelected('Products')}>📦 Productos </button>
+                        <button className={selectedSection === 'Products' ? 'ControlDashboard-SectionSelected' : ''} onClick={() => sectionSelected('Products')}>📦 Productos </button>
                         <hr />
-                        <button className={selectedSection === 'Users' ? 'selected' : ''} onClick={() => sectionSelected('Users')}>👥 Usuarios</button>
+                        <button className={selectedSection === 'Users' ? 'ControlDashboard-SectionSelected' : ''} onClick={() => sectionSelected('Users')}>👥 Usuarios</button>
                         <hr />
-                        <button className={selectedSection === 'Orders' ? 'selected' : ''} onClick={() => sectionSelected('Orders')}> 🧾 Pedidos </button>
+                        <button className={selectedSection === 'Orders' ? 'ControlDashboard-SectionSelected' : ''} onClick={() => sectionSelected('Orders')}> 🧾 Pedidos </button>
                         <hr />
-                        <button className={selectedSection === 'Statistics' ? 'selected' : ''} onClick={() => sectionSelected('Statistics')}> 📊 Estadísticas </button>
+                        <button className={selectedSection === 'Statistics' ? 'ControlDashboard-SectionSelected' : ''} onClick={() => sectionSelected('Statistics')}> 📊 Estadísticas </button>
                     </div>
+                    <a>👤 Pepito Jose</a>
                 </div>
             
                 <div className="ControlDashboard-Content">
