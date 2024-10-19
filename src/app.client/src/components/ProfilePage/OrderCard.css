@@ -72,9 +72,36 @@
   background-color: rgb(247, 247, 247);
   box-shadow: 1px 1px 15px rgba(82, 82, 82, 0.1);
   border-radius: 1rem;
-  padding: 0.5rem 0rem 0.5rem 0.5rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  align-items: center;
   
+}
+
+.OrderCard-PaymentTitle{
+  display: flex;
+  align-self: start;
+  padding-left: 0.5rem;
+}
+
+
+
+.OrderCard-MPButton div{
+  transform: scale(0.92);
+}
+
+.OrderCard-Payment hr{
+  width: 95%;
+}
+
+.OrderCard-Payment p{
+  transform: scale(1.7);
+}
+
+.OrderCard-MPButton div {
+ display: flex !important;
+ flex-direction: column;
+ align-items: center  ;
 }

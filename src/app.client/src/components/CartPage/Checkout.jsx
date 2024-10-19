@@ -101,16 +101,8 @@ export function Checkout ({products}) {
                         <label htmlFor="transfer">Efectivo</label>
                     </div>
                     <div className='Checkout-inputRadio'>
-                        <input type="radio" id="transfer" name="methodPayment" value="transfer"></input>
-                        <label htmlFor="transfer">Depósito o Transferencia Bancaria</label>
-                    </div>
-                    <div className='Checkout-inputRadio'>
                         <input type="radio" id="debitCard" name="methodPayment" value="debitCard"></input>
                         <label htmlFor="debitCard">Mercadopago - Tarjetas Online, PagoFacil, RapiPago</label>
-                    </div>
-                    <div className='Checkout-inputRadio'>
-                        <input type="radio" id="creditCard" name="methodPayment" value="creditCard"></input>
-                        <label htmlFor="creditCard">Tarjetas de crédito ¡Hasta 12 cuotas!</label>
                     </div>
                 </form>
             </div>
