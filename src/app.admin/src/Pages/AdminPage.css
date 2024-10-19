@@ -1,0 +1,12 @@
+.AdminPage-Layout{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+}

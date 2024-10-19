@@ -1,0 +1,69 @@
+.ControlDashboard-Container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(54, 54, 54);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.719);
+  overflow-y: hidden;
+  border-radius: 1rem;
+  height: 80vh;
+  width: 80vw;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.ControlDashboard-Header{
+  height: 3rem;
+  background-color: rgb(26, 26, 26);
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.ControlDashboard-Header button{
+  border: none;
+  padding: 0.4rem;
+  font-size: 0.85rem;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ControlDashboard-Header button:hover{
+  transform: translateY(-2px);
+}
+
+.ControlDashboard-HeaderButtons{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.ControlDashboard-HeaderButtons hr{
+  border-color: rgba(177, 177, 177, 0.671);
+}
+
+.ControlDashboard-Content{
+  background-color: rgb(54, 54, 54);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ControlDashboard-ContentBox{
+  height: 90%;
+  width: 90%;
+  background-color: rgb(54, 54, 54);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.719);
+  overflow-y: hidden;
+  border-radius: 1rem;
+}
+
+.selected{
+  color: rgb(0, 255, 85);
+}

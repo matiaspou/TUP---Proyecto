@@ -1,5 +1,10 @@
 .Categories-Conteiner{
   padding-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.Categories-Conteiner ul{
+  transition: 0.2s;
 }
 
 .Categories-HideListOfCategories {
@@ -20,10 +25,11 @@
   text-decoration: none;
   color: #333;
   font-weight: normal;
+  transition: 0.3s;
 }
 
 #Categories-ListOfCategories li a:hover {
-  color: rgba(117, 189, 231, 0.911);
+  transform: translateY(-2px);
 }
 
 .Categories-ShowCategoryApplicated{
@@ -55,7 +61,7 @@
 .Categories-Title{
   border: none;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 0.9rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -64,9 +70,10 @@
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .Categories-Title:hover{
   cursor: pointer;
-  color: #004691;
+  transform: translateY(-2px);
 }

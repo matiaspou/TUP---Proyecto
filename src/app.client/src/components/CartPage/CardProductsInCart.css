@@ -101,10 +101,14 @@
   font-weight: bold;
   border: none;
   border-color: rgb(0, 0, 0);
+  transition: 0.2s;
 }
 
+
+
 .CardProductsInCart-product button:hover{
-  background-color: hwb(0 97% 3% / 0.986);
+  /* background-color: hwb(0 97% 3% / 0.986); */
+  transform: translateY(-2px);
 }
 
 .CardProductsInCart-QuantityButtonPlus{
@@ -145,6 +149,7 @@
   color: rgb(253, 45, 45);
   font-weight: bold;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.267);
+  transition: 0.2s;
 }
 
 .CardProductsInCart-ConteinerButtons{

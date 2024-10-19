@@ -140,7 +140,14 @@ header {
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
+    transition: 0.2s;
   }
+
+  .Menu a:hover{
+    transform: translateY(-2px);
+  }
+
+
 
   .Menu-Buttons hr{
     border-color:  rgba(201, 201, 201, 0.356);
