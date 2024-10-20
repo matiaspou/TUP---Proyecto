@@ -1,0 +1,77 @@
+.Login-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.Login-Box img{
+    width: 6rem;
+}
+
+.Login-Header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.Login-Box{
+    background-color: antiquewhite;
+    border-radius: 1rem;
+    background-color: rgb(54, 54, 54);
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.658);
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.Login-Form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-bottom: 3rem;
+}
+
+
+.Login-Form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.Login-Form input{
+    padding: 0.5rem;
+    background-color: rgb(44, 44, 44);
+    border: none;
+    border-radius: 0.7rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.Login-Form input:focus-visible{
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+.Login-Form button{
+    padding: 0.5rem;
+    background-color: rgb(180, 155, 85);
+    box-shadow: 1px 1px 15px rgba(19, 19, 19, 0.658);
+    border: none;
+    border-radius: 0.7rem;
+    color: rgb(22, 22, 22);
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.Login-Form button:hover{
+    transform: translateY(-3px);
+}

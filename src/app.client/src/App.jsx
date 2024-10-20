@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.jsx'
 import SingleProductPage from './pages/SingleProductPage.jsx'
 import CartPage from './pages/CartPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import LoginAndRegisterPage from './pages/LoginAndRegisterPage.jsx';
 
 function App() {
 //falta agregar una vista de productos nuevos e imagenes tipo poster
@@ -20,6 +21,7 @@ function App() {
               <Route path="/product" element={<SingleProductPage/>} />
               <Route path="/cart" element={<CartPage/>} />
               <Route path="/profile" element={<ProfilePage/>} />
+              <Route path="/login" element={<LoginAndRegisterPage/>} />
             </Routes>
         </Router>
       </CartController>

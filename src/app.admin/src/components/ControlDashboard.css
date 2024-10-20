@@ -25,6 +25,7 @@
   justify-content: space-around;
   border-radius: 1rem;
   color: white;
+  font-weight: bold;
   font-size: 0.85rem;
 }
 
@@ -40,6 +41,7 @@
   color: white;
   cursor: pointer;
   transition: 0.2s;
+  font-weight: bold;
 }
 
 .ControlDashboard-Header button:hover{
@@ -76,11 +78,34 @@
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.658);
   overflow-y: hidden;
   border-radius: 1.6rem;
+  font-size: 0.85rem;
 }
 
 .selected{
   color: rgb(0, 255, 85);
 }
+
+.ControlDashboard-HeaderButtonsSesion{
+  display: flex;
+  gap: 1rem;
+  
+}
+
+.ControlDashboard-HeaderButtonsSesion span{
+  pointer-events: none;
+}
+
+
+
+.ControlDashboard-HeaderButtonsSesion a{
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ControlDashboard-HeaderButtonsSesion a:hover{
+  transform: translateY(-2px);
+}
+
 
 
 /* //////////////////////////TABLE STYLES ///////////////////////////////////*/

@@ -43,7 +43,10 @@ export const ControlDashboard = () => {
                         <hr />
                         <button className={selectedSection === 'Statistics' ? 'ControlDashboard-SectionSelected' : ''} onClick={() => sectionSelected('Statistics')}> 📊 Estadísticas </button>
                     </div>
-                    <a>👤 Pepito Jose</a>
+                    <div className="ControlDashboard-HeaderButtonsSesion">
+                        <span>👤 Pepito Jose</span>
+                        <a>👋 Cerrar Sesion</a>
+                    </div>
                 </div>
             
                 <div className="ControlDashboard-Content">

@@ -11,12 +11,13 @@ export const Orders = () => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Fecha de Ingreso</th>
-                                <th>Tipo de usuario</th>
-                                <th>Permisos</th>
-                                <th>Acciones</th>
+                                <th>Usuario</th>
+                                <th>Productos</th>
+                                <th>Forma de pago</th>
+                                <th>Estado de pago</th>
+                                <th>Forma de envio</th>
+                                <th>Estado de envio</th>
+                                <th>Estado de pedido</th>
                             </tr>
                             <tr id="Orders-Filters">
                                 <th><input type="number" id="filtroID" min="1" max="100" step="1"></input></th>
@@ -42,10 +43,12 @@ export const Orders = () => {
                                 <td>da</td>
                                 <td>da</td>
                                 <td>da</td>
+                                <td>da</td>
                                 <td>da</td> 
                                 <td>
-                                    <button>Editar 📝</button>
-                                    <button>Eliminar ❌</button>
+                                    <button>Verificar pago 💸</button>
+                                    <button>Pedido Despachado 🚚</button>
+                                    <button>Ver factura 📄</button>
                                 </td> 
                             </tr>
                             <tr>
@@ -54,10 +57,12 @@ export const Orders = () => {
                                 <td>da</td>
                                 <td>da</td>
                                 <td>da</td>
+                                <td>da</td>
                                 <td>da</td> 
                                 <td>
-                                    <button>Editar 📝</button>
-                                    <button>Eliminar ❌</button>
+                                    <button>Verificar pago 💸</button>
+                                    <button>Pedido Despachado 🚚</button>
+                                    <button>Ver factura 📄</button>
                                 </td> 
                             </tr>
                             <tr>
@@ -66,10 +71,12 @@ export const Orders = () => {
                                 <td>da</td>
                                 <td>da</td>
                                 <td>da</td>
+                                <td>da</td>
                                 <td>da</td> 
                                 <td>
-                                    <button>Editar 📝</button>
-                                    <button>Eliminar ❌</button>
+                                    <button>Verificar pago 💸</button>
+                                    <button>Pedido Despachado 🚚</button>
+                                    <button>Ver factura 📄</button>
                                 </td> 
                             </tr>
                         </tbody>

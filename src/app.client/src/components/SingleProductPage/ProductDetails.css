@@ -14,6 +14,7 @@
     display:flex;
     justify-content: end;
     gap: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .ProductDetails-ID{
@@ -23,7 +24,7 @@
     padding-left: 0.4rem;
     padding-right: 0.4rem;
     border-radius: 0.5rem;
-    font-size: 1.2rem;
+    
     color: #6b6b6b;
 }
 
@@ -55,7 +56,7 @@
     display: flex;
     align-items: start;
     flex-direction: column;
-    font-size: 1.2rem;
+    font-size: 1rem;
     gap: 0.5rem;
     font-weight: bold;
     color: rgb(95, 202, 95);
