@@ -6,7 +6,7 @@ export const Orders = () => {
     return(
     <>
         <div className='Orders-Conteiner'>
-            <div class="Orders-Table" >
+            <div className="Orders-Table" >
                     <table id="tablita">
                         <thead>
                             <tr>

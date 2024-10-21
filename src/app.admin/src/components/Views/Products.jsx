@@ -6,7 +6,7 @@ export const Products = () => {
     return(
     <>
         <div className='Products-Conteiner'>
-            <div class="Products-Table" >
+            <div className="Products-Table" >
                     <table id="tablita">
                         <thead>
                             <tr>

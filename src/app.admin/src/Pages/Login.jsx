@@ -3,12 +3,21 @@ import './Login.css';
 import logo from '../assets/DOMinationSystemsLogo.png';
 import { useSession } from '../context/SessionContext.jsx'; 
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Login() {
   const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState(''); 
-  const { login } = useSession();
+  const { login, checkSession } = useSession();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => { 
+    const response = checkSession(); 
+    if (response.success) { 
+      navigate('/'); 
+    }
+  }, [location.search, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

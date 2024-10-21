@@ -1,12 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './LoginAndRegisterPage.css';
 import logo from '../assets/DOMinationSystemsLogo.png';
+import { useSession } from '../context/SessionContext.jsx'; 
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function LoginAndRegisterPage() {
   const [isRegister, setIsRegister] = useState(false);
 
   const formToggle = () => {
     setIsRegister(!isRegister); 
+  };
+
+  const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState(''); 
+  const { login, checkSession } = useSession();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => { 
+    const response = checkSession(); 
+    if (response.success) { 
+      navigate('/'); 
+    }
+  }, [location.search, navigate]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      email: email,
+      password: password,
+    };
+
+
+    const validacion = login(userData);
+    console.log(validacion);
+
+    if (validacion.success) {
+      navigate(`/`);
+    } else {
+      console.log(validacion.message);
+    }
   };
 
   return (
@@ -18,7 +51,7 @@ function LoginAndRegisterPage() {
             <span id='formTitle'>{isRegister ? '👤 Registro' : '👤 Inicio de sesión'}</span>
           </div>
           <div className="Login-Form">
-            <form action="">
+            <form onSubmit={handleSubmit}>
 
               {isRegister && (
                 <>
@@ -48,11 +81,11 @@ function LoginAndRegisterPage() {
                 <>
                   <label htmlFor="email">Email:</label>
                   <br />
-                  <input name="email" type="text" required />
+                  <input name="email" type="text" required  onChange={(e) => setEmail(e.target.value)} />
                   <br />
                   <label htmlFor="password">Contraseña:</label>
                   <br />
-                  <input name="password" type="password" required />
+                  <input name="password" type="password" onChange={(e) => setPassword(e.target.value)}  required />
                   <br /><br />
                 </>
               )}

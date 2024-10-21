@@ -8,7 +8,7 @@ export const Users = () => {
     return(
     <>
         <div className='Users-Conteiner'>
-            <div class="Users-Table" >
+            <div className="Users-Table" >
                     <table id="tablita">
                         <thead>
                             <tr>

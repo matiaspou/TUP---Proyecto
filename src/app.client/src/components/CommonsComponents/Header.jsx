@@ -3,14 +3,20 @@ import logo from '../../assets/DOMinationSystemsLogo.png';
 import cartCircle from '../../assets/cart-circle.svg';
 import { useCart } from "../../context/CartController.jsx";
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import { useSession } from '../../context/SessionContext.jsx'; 
+import { useEffect } from 'react';
 
 export const Header = () => {
     const { getQuantityProductsInCart } = useCart();
     const cartNumber = getQuantityProductsInCart();
     const navigate = useNavigate();
     const location = useLocation();
+    const { user, checkSession, logout } = useSession(); 
 
+    useEffect(() => { 
+        const response = checkSession(); 
+      }, [location.search, navigate]);
+   
 
     if (cartNumber > 0)
     {
@@ -62,7 +68,7 @@ export const Header = () => {
                         <div className="cartTitle">Carrito</div>
                     </a >
                     <hr />
-                    <a href="/profile">👤 Perfil</a>
+                    {user ? <><a href="/profile">👤 Perfil</a> <hr></hr> <button onClick={logout}>🚪 Cerrar Sesion</button> </>: <a href="/login">👤 Iniciar Sesion</a>  }
                 </div>
         </div>
 

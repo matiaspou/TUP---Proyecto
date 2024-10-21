@@ -8,14 +8,14 @@ function AdminPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { user } = useSession(); 
+  const { user, checkSession } = useSession(); 
 
   useEffect(() => { 
-
-    if (!user) {
-      navigate('/login');
+    const response = checkSession(); 
+    if (!response.success) { 
+      navigate('/login'); 
     }
-  }, [location.search]);
+  }, [location.search, navigate]);
 
   return (
     <div className="AdminPage-Layout">

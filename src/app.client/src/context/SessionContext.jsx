@@ -27,7 +27,6 @@ export const SessionProvider = ({ children }) => {
   };
   
   const login = (userData) => {
-    
     const userFound = usersRegistrated.find(user => 
       user.email === userData.email && user.password === userData.password
     );

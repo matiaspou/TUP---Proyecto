@@ -147,6 +147,21 @@ header {
     transform: translateY(-2px);
   }
 
+  .Menu button{
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .Menu button:hover{
+    transform: translateY(-2px);
+  }
+
+
 
 
   .Menu-Buttons hr{
