@@ -31,8 +31,6 @@ export function Checkout ({products}) {
         event.preventDefault(); 
         const discountCode = event.target.elements.discountCode.value;
         
-        
-                // Busca el descuento
         const discount = discountCodes.find(code => code.code === discountCode);
 
         if (!discount) {
@@ -40,10 +38,9 @@ export function Checkout ({products}) {
             setDiscountByCode(0);
         } else {
             setErrorMessageDiscountCode(""); 
-            setDiscountByCode(discount.discount); // Aplica el descuento
+            setDiscountByCode(discount.discount);
         }
 
-        console.log(discount); // Verifica si el descuento fue encontrado
     }; 
 
 

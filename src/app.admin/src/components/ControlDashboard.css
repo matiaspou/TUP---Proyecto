@@ -88,7 +88,7 @@
 .ControlDashboard-HeaderButtonsSesion{
   display: flex;
   gap: 1rem;
-  
+  align-items: center;
 }
 
 .ControlDashboard-HeaderButtonsSesion span{
@@ -97,12 +97,12 @@
 
 
 
-.ControlDashboard-HeaderButtonsSesion a{
+.ControlDashboard-HeaderButtonsSesion button{
   cursor: pointer;
   transition: 0.2s;
 }
 
-.ControlDashboard-HeaderButtonsSesion a:hover{
+.ControlDashboard-HeaderButtonsSesion button:hover{
   transform: translateY(-2px);
 }
 

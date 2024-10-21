@@ -20,7 +20,6 @@ export const Header = () => {
 
     const searchProduct = (event) =>{
         event.preventDefault(); 
-        console.log("Entree!");
         
         const queryInput = document.getElementById("Search-bar").value;
         const queryParams = new URLSearchParams(location.search);

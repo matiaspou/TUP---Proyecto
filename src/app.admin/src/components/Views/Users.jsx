@@ -1,7 +1,9 @@
 import './Users.css'
-
+import { useSession } from '../../context/SessionContext.jsx';
 
 export const Users = () => {
+
+    const { user } = useSession(); 
 
     return(
     <>
@@ -31,7 +33,7 @@ export const Users = () => {
                                 </th>
                                 <th><input type="text" id="filtroApellido"></input></th>
                                 <th>
-                                    <button>Agregar usuario ➕</button> 
+                                    {user.role == "Admin" ? <button>Agregar usuario ➕</button> : null }
                                 </th>
                             </tr>
                         </thead>

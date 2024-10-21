@@ -15,7 +15,7 @@ function LoginAndRegisterPage() {
         <div className="Login-Box">
           <div className="Login-Header">
             <img src={logo} alt='Logo de DOMination System' />
-            <span id='formTitle'>{isRegister ? 'Registro' : 'Inicio de sesión'}</span>
+            <span id='formTitle'>{isRegister ? '👤 Registro' : '👤 Inicio de sesión'}</span>
           </div>
           <div className="Login-Form">
             <form action="">
