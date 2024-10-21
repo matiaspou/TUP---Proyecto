@@ -11,7 +11,7 @@ export const ControlDashboard = () => {
     const [selectedSection, setSelectedSection] = useState('Products');
     const { logout } = useSession(); 
     const navigate = useNavigate(); 
-    
+    const { user } = useSession(); 
 
     const sectionSelected = (section) => {
         setSelectedSection(section);
