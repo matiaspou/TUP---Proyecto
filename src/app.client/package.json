@@ -1,11 +1,11 @@
 {
-  "homepage":"https://matiaspou.github.io/TUP---Proyecto",
+  "homepage": "https://matiaspou.github.io/TUP---Proyecto",
   "name": "tup-proyecto",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
@@ -13,8 +13,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "payment": "^2.4.7",
     "react": "^18.3.1",
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^18.3.1",
+    "react-payment-inputs": "^1.2.0",
     "react-router-dom": "^6.27.0"
   },
   "devDependencies": {

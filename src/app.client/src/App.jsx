@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.jsx'
 import SingleProductPage from './pages/SingleProductPage.jsx'
 import CartPage from './pages/CartPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import PaymentPage from './pages/PaymentPage.jsx';
 import LoginAndRegisterPage from './pages/LoginAndRegisterPage.jsx';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path="/cart" element={<CartPage/>} />
               <Route path="/profile" element={<ProfilePage/>} />
               <Route path="/login" element={<LoginAndRegisterPage/>} />
+              <Route path="/payment" element={<PaymentPage/>} />
             </Routes>
         </Router>
       </CartController>
