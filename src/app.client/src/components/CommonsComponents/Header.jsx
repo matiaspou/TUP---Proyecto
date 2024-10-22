@@ -15,14 +15,8 @@ export const Header = () => {
 
     useEffect(() => { 
         const response = checkSession(); 
-      }, [location.search, navigate]);
+      }, [location.search]);
    
-
-    if (cartNumber > 0)
-    {
-        const divQuantityProductsInCart = document.getElementById('QuantityProductsInCart'); 
-        divQuantityProductsInCart.className= 'ShowQuantityProductsInCart';
-    }
 
     const searchProduct = (event) =>{
         event.preventDefault(); 
@@ -59,7 +53,7 @@ export const Header = () => {
                     <a href="/Cart" className="cart">
                         <div className="cartIcon">
                             <div className="cartImage">🛒</div>
-                            <div className="HideQuantityProductsInCart" id='QuantityProductsInCart'>
+                            <div className={cartNumber>0 ? 'ShowQuantityProductsInCart' :"HideQuantityProductsInCart" } id='QuantityProductsInCart'>
                                 <div className='QuantityProductsInCart-circle' ><img src={cartCircle} alt=""  /></div>
                                 <div className={(cartNumber>9) ? 'QuantityProductsInCart-number2' : 'QuantityProductsInCart-number'}>{cartNumber}</div>
                             </div>
@@ -68,7 +62,15 @@ export const Header = () => {
                         <div className="cartTitle">Carrito</div>
                     </a >
                     <hr />
-                    {user ? <><a href="/profile">👤 Perfil</a> <hr></hr> <button onClick={logout}>🚪 Cerrar Sesion</button> </>: <a href="/login">👤 Iniciar Sesion</a>  }
+                    {user ? ( <> <a href="/profile">👤 Perfil</a> <hr /> <button onClick={() => { if (window.confirm('Confirmar cierre de sesión')) { logout(); }
+                            }}
+                            >
+                            🚪 Cerrar Sesión
+                            </button>
+                        </>
+                        ) : (
+                        <a href="/login">👤 Iniciar Sesion</a>
+                        )}
                 </div>
         </div>
 

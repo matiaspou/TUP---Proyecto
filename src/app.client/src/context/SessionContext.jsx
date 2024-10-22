@@ -60,8 +60,6 @@ export const SessionProvider = ({ children }) => {
     localStorage.removeItem('user'); 
   };
 
-  
-
   return (
     <SessionContext.Provider value={{ user, login, logout, checkSession }}>
       {children}

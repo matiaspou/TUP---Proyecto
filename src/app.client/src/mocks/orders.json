@@ -1,0 +1,19 @@
+[
+    {
+        "postalCode": "",
+        "shippingMethod": "retiroAlmacen",
+        "paymentMethod": "cash",
+        "discount": 0,
+        "products": [
+            {
+                "id": 4,
+                "title": "Notebook Noblex N14x1010 14.1 Hd Intel Celeron 4gb/128gb Sdd",
+                "image": "http://http2.mlstatic.com/D_939222-MLU76657843660_062024-I.jpg",
+                "price": "389999",
+                "quantity": 1
+            }
+        ],
+        "id": 1,
+        "client": "admin"
+    }
+]

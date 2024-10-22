@@ -65,7 +65,11 @@
   
 }
 
-.OrderCard-Payment{
+.OrderCard-ProductsDetails hr{
+  width: 95%;
+}
+
+.OrderCard-Box{
   font-size: 0.9rem;
   min-width: 20%;
   max-width: 20%;
@@ -80,10 +84,22 @@
   
 }
 
-.OrderCard-PaymentTitle{
+.OrderCard-BoxTitle{
   display: flex;
   align-self: start;
   padding-left: 0.5rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.OrderCard-Box span{
+  display: flex;
+  align-self: start;
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+  font-weight: normal;
 }
 
 
@@ -92,11 +108,11 @@
   transform: scale(0.92);
 }
 
-.OrderCard-Payment hr{
+.OrderCard-Box hr{
   width: 95%;
 }
 
-.OrderCard-Payment p{
+.OrderCard-Box p{
   transform: scale(1.7);
 }
 
