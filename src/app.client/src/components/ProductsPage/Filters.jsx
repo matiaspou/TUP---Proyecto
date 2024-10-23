@@ -1,5 +1,4 @@
 import './Filters.css';
-import categories from '../../mocks/categories.json';
 import circleX from '../../assets/circle-x.svg';
 import minus from '../../assets/minus.svg';
 import plus from '../../assets/plus.svg';
@@ -22,10 +21,6 @@ export function Filters() {
         }
     }, [location.search]);
 
-    const getCategoryNameById = (id) => {
-        const category = categories.find(category => category.id === id);
-        return category ? category.nombre : 'Categoría no encontrada';
-    };
 
     const toggleViewCategories = () =>{
         const listOfCategories = document.getElementById("Filters-ListOfCategories")
@@ -40,12 +35,7 @@ export function Filters() {
         }
     }
 
-    const applyCategory = (id, event) => {
-        event.preventDefault();
-        setCategoryApplicated(id);
-        toggleViewCategories();
-        navigate(`?cate=${id}`);
-    };
+
 
 
     return (

@@ -5,7 +5,6 @@ import Payment from 'payment';
 import mockCreditCards from "../mocks/creditsCard.json";
 import { useNavigate, useLocation } from 'react-router-dom';
 import "./PaymentPage.css";
-import Orders from "../mocks/orders.json";
 
 function clearNumber(value = '') {
   return value.replace(/\D+/g, '');

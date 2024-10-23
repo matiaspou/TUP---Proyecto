@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Checkout.css';
 import discountCodes from "../../mocks/discounts.json";
-import orders from "../../mocks/orders.json";
 import { useSession } from '../../context/SessionContext.jsx';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -70,7 +69,7 @@ export function Checkout ({products}) {
                 priceShippingFinal = "0";
             }
 
-            let priceTotal = parseInt(cart.reduce((total, product) => total + product.price, 0)); 
+            let priceTotal = parseInt(cart.reduce((total, product) => total + product.precio, 0)); 
 
             priceTotal += parseInt(priceShippingFinal);
 
@@ -78,22 +77,20 @@ export function Checkout ({products}) {
 
 
 
-            cart.push({"title":shippingMethod,
-                "price": priceShippingFinal,
-                "id":10001
-            }, {"title": "Descuento",
-                "price": discountByCode,
-                "id":10000
+            cart.push({"nombre_producto":shippingMethod,
+                "precio": priceShippingFinal,
+                "id_producto":10001
+            }, {"nombre_producto": "Descuento",
+                "precio": discountByCode,
+                "id_producto":10000
             })
             
             // Datos de los inputs recogidos
             const dataCompra = {
-                postalCode,
                 shippingMethod,
                 paymentMethod,
                 discount: discountByCode,
                 products: cart,
-                id:1,
                 client: user.email,
                 priceTotal:  priceTotal
             };
@@ -102,14 +99,35 @@ export function Checkout ({products}) {
 
             localStorage.removeItem("productsInCart");
 
-            orders.push(dataCompra);
+            
 
             navigate("/profile")
 
-            console.log(orders);
             
         }
     };
+
+    function insertOrder(dataPedido) {
+        fetch('http://localhost/src/TUP---Proyecto/src/app.server/insertOrder.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: {dataPedido}
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la respuesta del servidor');
+            }
+            return response.text(); // O .json() si tu PHP retorna un JSON
+        })
+        .then(result => {
+            console.log(result); // Maneja la respuesta del servidor
+        })
+        .catch(error => {
+            console.error('Error al insertar el pedido:', error);
+        });
+    }
 
     return (
     <>

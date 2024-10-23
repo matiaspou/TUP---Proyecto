@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext } from 'react';
-import usersRegistrated from "../mocks/users.json";
 
 const SessionContext = createContext();
 
@@ -25,32 +24,55 @@ export const SessionProvider = ({ children }) => {
       };
     }
   };
-  
-  const login = (userData) => {
-    const userFound = usersRegistrated.find(user => 
-      user.email === userData.email && user.password === userData.password
-    );
-    
-    if (userFound) {
-      const userInfo = {
-        email: userFound.email,
-        role: userFound.role,
-      };
-      setUser(userInfo);
-      localStorage.setItem('user', JSON.stringify(userInfo)); 
-      console.log("Usuario guardado en localStorage: ", JSON.parse(localStorage.getItem('user')));
-      return {
-        success: true,
-        email: userFound.email,
-        role: userFound.role,
-        message: "Inicio de sesión exitoso"
-      };
-    } else {
-      setUser(null);
+
+
+  const login = async (userData) => {
+    try {
+      const response = await fetch("http://localhost/src/TUP---Proyecto/src/app.server/controllers/UsersController.php", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ action: 'userAuthetication', User: userData })
+      });
+
+
+      if (!response.ok) {
+        throw new Error('Error en la respuesta del servidor');
+      }
+
+      const userFound = await response.json();
+
+      console.log(userFound);
+      
+
+      if (userFound) {
+        const userInfo = {
+          email: userFound.email,
+          role: userFound.role, 
+        };
+        setUser(userInfo);
+        localStorage.setItem('user', JSON.stringify(userInfo)); 
+        console.log("Usuario guardado en localStorage: ", userInfo);
+        return {
+          success: true,
+          email: userFound.email,
+          role: userFound.role,
+          message: "Inicio de sesión exitoso"
+        };
+      } else {
+        setUser(null);
+        return {
+          success: false,
+          user: "",
+          message: "Credenciales incorrectas"
+        };
+      }
+    } catch (error) {
+      console.error("Error al iniciar sesión: ", error);
       return {
         success: false,
-        user: "",
-        message: "Credenciales incorrectas"
+        message: "Ocurrió un error durante el inicio de sesión"
       };
     }
   };

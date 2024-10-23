@@ -41,7 +41,7 @@ export const Header = () => {
         <div className="SearchBar">
             <div className="SearchBar-Header"> 🔍 </div>
             <hr />
-            <form onSubmit={searchProduct}><input type="text" id="Search-bar"  placeholder="Notebook Asus VivoBook 14, Ryzen 7, Nvidia GTX, Disco SSD..."></input></form>
+            <form onSubmit={searchProduct}><input  autoComplete="off" type="text" id="Search-bar"  placeholder="Notebook Asus VivoBook 14, Ryzen 7, Nvidia GTX, Disco SSD..."></input></form>
         </div>
         
 

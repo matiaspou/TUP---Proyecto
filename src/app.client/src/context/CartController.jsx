@@ -1,5 +1,4 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import productsStock from "../mocks/products.json";
 
 const CartContext = createContext();
 
@@ -8,7 +7,8 @@ export const CartController = ({ children }) => {
   const cartLocalStorage = JSON.parse(localStorage.getItem("productsInCart"));
   
   const [productsInCart, setProductsInCart] = useState([]);
-
+  
+ 
   useEffect(() => {
     if(cartLocalStorage){
       setProductsInCart(cartLocalStorage);
@@ -20,8 +20,9 @@ export const CartController = ({ children }) => {
       localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
   }, [productsInCart])
 
-  const addToCart = (idProductToAdd) => {
-    var productAddedBefore = productsInCart.find((product) => product.id == idProductToAdd);
+
+  const addToCart = async (idProductToAdd) => {
+    var productAddedBefore = productsInCart.find((product) => product.id_producto == idProductToAdd);
     
     if (productAddedBefore) {
       productAddedBefore.quantity += 1;
@@ -29,25 +30,45 @@ export const CartController = ({ children }) => {
     } 
 
     else {
-      var productToAdd = productsStock.find((product) => product.id == idProductToAdd);
-
+      var productToAdd = await getProductByID(idProductToAdd);
+      
       const mappedProductToAdd = {
-        id: productToAdd.id,
-        title: productToAdd.title,
-        image: productToAdd.image,
-        price: productToAdd.price,
+        id_producto: productToAdd.id_producto,
+        nombre_producto: productToAdd.nombre_producto,
+        url_imagen: productToAdd.url_imagen,
+        precio: productToAdd.precio,
         quantity: 1
       };
       setProductsInCart([...productsInCart, mappedProductToAdd]);
     }
   };
 
+  const getProductByID = async (id) => {
+    try {
+      const response = await fetch("http://localhost/src/TUP---Proyecto/src/app.server/controllers/ProductsController.php", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ action: 'getProductById', id: id })
+      });
+  
+      const data = await response.json();
+      return data.result;  
+  
+    } catch (error) {
+      console.log('Error en fetch:', error);
+      return null; 
+    }
+  };
+  
+
   const getProductsInCart = () => {
     return productsInCart;
   };
 
   const checkIdInCart = (id) => {
-    if(productsInCart.find((product) => product.id == id)){
+    if(productsInCart.find((product) => product.id_producto == id)){
       return true;
     }else{
       return false;
@@ -61,7 +82,7 @@ export const CartController = ({ children }) => {
   const updateProductQuantity = (productId, newQuantity) => {
     setProductsInCart(prevProducts =>
       prevProducts.map(product => 
-        product.id === productId
+        product.id_producto === productId
           ? { ...product, quantity: product.quantity+newQuantity } 
           : product 
       )
@@ -69,13 +90,13 @@ export const CartController = ({ children }) => {
   };
 
   const deleteProductInCart = (id) =>{
-    const productsFiltered = productsInCart.filter(product => product.id !== id);
+    const productsFiltered = productsInCart.filter(product => product.id_producto !== id);
     setProductsInCart(productsFiltered)
   }
 
   const getPriceTotalOfCart = () => {
     const priceTotal = productsInCart.reduce((acum, product) => {
-      return acum + (product.price * product.quantity);
+      return acum + (product.precio * product.quantity);
     }, 0);
     return priceTotal;
   }

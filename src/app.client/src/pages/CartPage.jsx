@@ -31,7 +31,7 @@ function CartPage() {
 
                 
                   <div className="CartPage-ProductsContent">
-                    {productsInCart.map(product => ( <CardProductsInCart product={product}></CardProductsInCart>))}
+                    {productsInCart.map((product, index) => ( <CardProductsInCart product={product} key={index}></CardProductsInCart>))}
 
                     <hr />
 

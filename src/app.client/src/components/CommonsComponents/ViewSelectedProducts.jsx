@@ -1,10 +1,29 @@
 import './ViewSelectedProducts.css'
-import products from '../../mocks/products.json';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CardProduct } from './CardProduct';
 
 export function ViewSelectedProducts ({titulo}) {
     const carouselRef = useRef();
+    const [products, setProducts] = useState(null);
+
+    useEffect(() => {
+    
+        fetch("http://localhost/src/TUP---Proyecto/src/app.server/controllers/ProductsController.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ action: 'getSelectedProducts'})
+        })
+        .then(response => response.json())
+        .then(data => {
+            setProducts(data.result); 
+        })
+        .catch((error) => console.log('Error en fetch:', error));
+    }, []);
+    
+
+    if(!products) { return null} 
 
     const scrollLeft = () => {
         const carousel = carouselRef.current;
@@ -27,26 +46,27 @@ export function ViewSelectedProducts ({titulo}) {
     };
 
     return(
-    <>
-    <section className="ViewSelectedProducts-Conteiner">
-        <div className="ViewSelectedProducts-Header">
-                <h2>{titulo}</h2>
-                <div className="ViewSelectedProducts-carrouselButtons">
-                    <button className="ViewSelectedProducts-scroll-button left" onClick={scrollLeft}>
-                        &lt;
-                    </button>
-                    <hr />
-                    <button className="ViewSelectedProducts-scroll-button right" onClick={scrollRight}>
-                        &gt;
-                    </button>
+            <>
+            <section className="ViewSelectedProducts-Conteiner">
+                <div className="ViewSelectedProducts-Header">
+                        <h2>{titulo}</h2>
+                        <div className="ViewSelectedProducts-carrouselButtons">
+                            <button className="ViewSelectedProducts-scroll-button left" onClick={scrollLeft}>
+                                &lt;
+                            </button>
+                            <hr />
+                            <button className="ViewSelectedProducts-scroll-button right" onClick={scrollRight}>
+                                &gt;
+                            </button>
+                        </div>
                 </div>
-        </div>
-        <div className="ViewSelectedProducts-productGrid" ref={carouselRef}>
-        {
-            products.map(product => (
-                <CardProduct product={product} key={product.id}></CardProduct>
-            ))}
-        </div>
-    </section>
-    </>
+                <div className="ViewSelectedProducts-productGrid" ref={carouselRef}>
+                {
+                    products.map((product, index) => (
+                        <CardProduct key={index} product={product}></CardProduct>
+                    ))}
+                </div>
+            </section>
+            </>
+
 )}
