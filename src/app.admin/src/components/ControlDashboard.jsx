@@ -53,7 +53,7 @@ export const ControlDashboard = () => {
                     </div>
                     <div className="ControlDashboard-HeaderButtonsSesion">
                         <span>👤 {user.email}</span>
-                        <button onClick={buttonLogout}>👋 Cerrar Sesión</button>
+                        <button onClick={buttonLogout}>🚪🏃‍♂️ Cerrar Sesión</button>
                     </div>
                 </div>
             

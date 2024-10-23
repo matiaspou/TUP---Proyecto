@@ -65,7 +65,7 @@ export const Header = () => {
                     {user ? ( <> <a href="/profile">👤 Perfil</a> <hr /> <button onClick={() => { if (window.confirm('Confirmar cierre de sesión')) { logout(); }
                             }}
                             >
-                            🚪 Cerrar Sesión
+                            🚪🏃‍♂️ Cerrar Sesión
                             </button>
                         </>
                         ) : (

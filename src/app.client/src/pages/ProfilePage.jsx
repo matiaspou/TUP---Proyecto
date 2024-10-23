@@ -19,7 +19,7 @@ function ProfilePage() {
     if (!response.success) { 
       navigate('/'); 
     }
-  }, [location.search, navigate, user]);
+  }, []);
 
 
   return (

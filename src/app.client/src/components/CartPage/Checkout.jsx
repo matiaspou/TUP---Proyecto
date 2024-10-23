@@ -14,8 +14,8 @@ export function Checkout ({products}) {
     const [discountByCode, setDiscountByCode] = useState(0);
 
     const [postalCode, setPostalCode] = useState("");
-    const [shippingMethod, setShippingMethod] = useState("retiroAlmacen");
-    const [paymentMethod, setPaymentMethod] = useState("cash");
+    const [shippingMethod, setShippingMethod] = useState("Retiro en Almacen");
+    const [paymentMethod, setPaymentMethod] = useState("Efectivo");
 
     const { user, checkSession, logout } = useSession(); 
 
@@ -59,8 +59,31 @@ export function Checkout ({products}) {
             navigate("/login");
         } else {
             const cart = JSON.parse(localStorage.getItem("productsInCart"));
-            cart.push({"title":paymentMethod,
-                "price": priceShipping
+
+            let priceShippingFinal;
+
+            if (shippingMethod === "Envio OCA a Domicilio") {
+                priceShippingFinal = "6492";
+            } else if (shippingMethod === "Envio OCA a Sucursal") {
+                priceShippingFinal = "4764";
+            } else {
+                priceShippingFinal = "0";
+            }
+
+            let priceTotal = parseInt(cart.reduce((total, product) => total + product.price, 0)); 
+
+            priceTotal += parseInt(priceShippingFinal);
+
+            priceTotal *= (1 - (parseInt(discountByCode) / 100)); 
+
+
+
+            cart.push({"title":shippingMethod,
+                "price": priceShippingFinal,
+                "id":10001
+            }, {"title": "Descuento",
+                "price": discountByCode,
+                "id":10000
             })
             
             // Datos de los inputs recogidos
@@ -71,10 +94,11 @@ export function Checkout ({products}) {
                 discount: discountByCode,
                 products: cart,
                 id:1,
-                client: user.email
+                client: user.email,
+                priceTotal:  priceTotal
             };
 
-            console.log("Datos de la compra:", dataCompra);
+            //console.log("Datos de la compra:", dataCompra);
 
             localStorage.removeItem("productsInCart");
 
@@ -117,8 +141,8 @@ export function Checkout ({products}) {
                             id="retiroAlmacen"
                             name="methodShipping"
                             value="retiroAlmacen"
-                            checked={shippingMethod === "retiroAlmacen"}
-                            onChange={() => setShippingMethod("retiroAlmacen")}
+                            checked={shippingMethod === "Retiro en Almacen"}
+                            onChange={() => setShippingMethod("Retiro en Almacen")}
                         />
                         <label htmlFor="retiroAlmacen">Retiro en almacén $0</label>
                     </div>
@@ -129,8 +153,8 @@ export function Checkout ({products}) {
                             name="methodShipping"
                             value="OcaDomicilio"
                             disabled={priceShipping === ""}
-                            checked={shippingMethod === "OcaDomicilio"}
-                            onChange={() => setShippingMethod("OcaDomicilio")}
+                            checked={shippingMethod === "Envio OCA a Domicilio"}
+                            onChange={() => setShippingMethod("Envio OCA a Domicilio")}
                         />
                         <label htmlFor="OcaDomicilio">OCA Domicilio ${priceShipping.Domicilio}</label>
                     </div>
@@ -141,8 +165,8 @@ export function Checkout ({products}) {
                             name="methodShipping"
                             value="OcaSucursal"
                             disabled={priceShipping === ""}
-                            checked={shippingMethod === "OcaSucursal"}
-                            onChange={() => setShippingMethod("OcaSucursal")}
+                            checked={shippingMethod === "Retiro en Sucursal OCA"}
+                            onChange={() => setShippingMethod("Retiro en Sucursal OCA")}
                         />
                         <label htmlFor="OcaSucursal">OCA Sucursal ${priceShipping.Sucursal}</label>
                     </div>
@@ -181,21 +205,32 @@ export function Checkout ({products}) {
                             id="cash"
                             name="methodPayment"
                             value="cash"
-                            checked={paymentMethod === "cash"}
-                            onChange={() => setPaymentMethod("cash")}
+                            checked={paymentMethod === "Efectivo"}
+                            onChange={() => setPaymentMethod("Efectivo")}
                         />
                         <label htmlFor="cash">Efectivo</label>
                     </div>
                     <div className='Checkout-inputRadio'>
                         <input
                             type="radio"
-                            id="debitCard"
+                            id="transfer"
                             name="methodPayment"
-                            value="debitCard"
-                            checked={paymentMethod === "debitCard"}
-                            onChange={() => setPaymentMethod("debitCard")}
+                            value="transfer"
+                            checked={paymentMethod === "Transferencia Bancaria"}
+                            onChange={() => setPaymentMethod("Transferencia Bancaria")}
                         />
-                        <label htmlFor="debitCard">Mercadopago - Tarjetas Online, PagoFacil, RapiPago</label>
+                        <label htmlFor="transfer">Transferencia Bancaria</label>
+                    </div>
+                    <div className='Checkout-inputRadio'>
+                        <input
+                            type="radio"
+                            id="creditCard"
+                            name="methodPayment"
+                            value="creditCard"
+                            checked={paymentMethod === "Tarjeta de Credito"}
+                            onChange={() => setPaymentMethod("Tarjeta de Credito")}
+                        />
+                        <label htmlFor="creditCard">Tarjeta de Credito</label>
                     </div>
                 </form>
             </div>

@@ -3,6 +3,9 @@ import Card from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import Payment from 'payment';
 import mockCreditCards from "../mocks/creditsCard.json";
+import { useNavigate, useLocation } from 'react-router-dom';
+import "./PaymentPage.css";
+import Orders from "../mocks/orders.json";
 
 function clearNumber(value = '') {
   return value.replace(/\D+/g, '');
@@ -52,6 +55,9 @@ export function formatFormData(data) {
 }
 
 function PaymentPage() {
+  const location = useLocation();
+  const [Order, setOrder] = useState(null);
+
   const [state, setState] = useState({
     number: "",
     name: "",
@@ -124,33 +130,92 @@ function PaymentPage() {
 
   const { name, number, expiry, cvc, focused, issuer, formData } = state;
 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const id = queryParams.get('id');
+    if (id) {
+      setOrder(Orders.find(order => Number(order.id) === Number(id))); 
+    }
+  }, [location.search]);
+
   return (
-    <div key="Payment">
-      <div className="App-payment">
-        <Card number={number} name={name} expiry={expiry} cvc={cvc} focused={focused} callback={handleCallback}
-        />
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input type="tel" name="number" className="form-control" placeholder="Card Number" pattern="[\d| ]{16,22}" required onChange={handleInputChange} onFocus={handleInputFocus} />
+    <div className="PaymentPage-Layout">
+      <div className="PaymentPage-ButtonBack"><a href="./profile">⬅️ Volver</a></div>
+      <div className="PaymentPage-Container">
+        <div className="PaymentPage-OrderDetails">
+          <div className="PaymentPage-ProductsBox">
+                <h3>📃 Detalle del pedido</h3>
+              <hr />
           </div>
-          <div className="form-group">
-            <input type="text" name="name" className="form-control" placeholder="Name" required onChange={handleInputChange} onFocus={handleInputFocus}/>
+          <div className="PaymentPage-ProductsBox">
+                <h4>🔎 Informacion</h4>
+              <hr />
+              <ul>
+                {Order ? (
+                      <>
+                        <li>🏷️ Id del pedido: {Order.id}</li>
+                        <li>🪪 Id cliente: {Order.idClient}</li>
+                        <li>✉️ Email del cliente: {Order.client}</li>
+                        <li>🚚 Metodo de entrega: {Order.shippingMethod}</li>
+                      </>
+                ) : (
+                  <p>No se encontró el pedido.</p>
+                )}
+              </ul>
           </div>
-          <div className="row">
-            <div className="col-6">
-              <input type="tel" name="expiry" className="form-control" placeholder="Valid Thru" required onChange={handleInputChange} onFocus={handleInputFocus}
-              />
+          <div className="PaymentPage-ProductsBox">
+            <h4>📦 Productos</h4> 
+            <hr />
+            <ul>
+              {Order ? (
+                    Order.products.map((product, index) => (
+                        (product.id != 10000 && product.id != 10001) ?
+                        <li key={index}>▪️ {product.title} -  Cantidad: {product.quantity} - Precio: ${new Intl.NumberFormat('es-AR').format(Math.trunc(product.price*product.quantity))}</li>
+                        : <li key={index}>▪️ {product.title} - Precio: ${new Intl.NumberFormat('es-AR').format(Math.trunc(product.price))}</li>
+                  ))
+              ) : (
+                <p>No se encontró el pedido.</p>
+              )}
+            </ul>
+          </div>
+          <div className="PaymentPage-ProductsBox">
+            <hr />
+              {Order ? 
+              <>
+                <h3>💸 Total a pagar: ${new Intl.NumberFormat('es-AR').format(Math.trunc(Order.priceTotal))}</h3>
+                <hr />
+              </> 
+              : (
+                <p>No se encontró el pedido.</p>
+            )}
+          </div>
+          
+        </div>
+        <div className="PaymentPage-CardContainer">
+        <div className="PaymentPage-ProductsBox">
+                <h3>💳 Pago</h3>
+              <hr />
+          </div>
+          <Card number={number} name={name} expiry={expiry} cvc={cvc} focused={focused} callback={handleCallback} />
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <input type="tel" name="number" className="form-control" placeholder="Numero de la tarjeta" pattern="[\d| ]{16,22}" required onChange={handleInputChange} onFocus={handleInputFocus} />
+            </div>
+            <div className="form-group">
+              <input type="text" name="name" className="form-control" placeholder="Nombre completo" required onChange={handleInputChange} onFocus={handleInputFocus} />
             </div>
             <div className="col-6">
-              <input type="tel" name="cvc" className="form-control" placeholder="CVC" pattern="\d{3,4}" required onChange={handleInputChange}onFocus={handleInputFocus} />
+              <input type="tel" name="expiry" className="form-control" placeholder="Fecha vencimiento" required onChange={handleInputChange} onFocus={handleInputFocus} />
             </div>
-          </div>
-          <input type="hidden" name="issuer" value={issuer} />
-          <div className="form-actions">
-            <button className="btn btn-primary btn-block">PAY</button>
-          </div>
-        </form>
-        {formData && ( <div className="App-highlight"> {formatFormData(formData).map((d, i) => (<div key={i}>{d}</div>))} </div> )}
+            <div className="col-6">
+              <input type="tel" name="cvc" className="form-control" placeholder="CVC" pattern="\d{3,4}" required onChange={handleInputChange} onFocus={handleInputFocus} />
+            </div>
+            <input type="hidden" name="issuer" value={issuer} />
+            <div className="form-actions">
+              <button className="btn btn-primary btn-block" >Pagar</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
