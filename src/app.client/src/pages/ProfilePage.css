@@ -10,7 +10,7 @@
   background-color: rgb(238, 238, 238);
 }
 
-.ProfilePage-Conteiner{
+.ProfilePage-Container{
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -24,10 +24,16 @@
   padding-bottom: 1rem;
 }
 
-.ProfilePage-Box1 {
-  width: 1170px;
+.ProfilePage-Content{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
 }
-
 
 .ProfilePage-Header{
   display: flex;

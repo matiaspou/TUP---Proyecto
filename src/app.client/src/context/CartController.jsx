@@ -7,7 +7,6 @@ export const CartController = ({ children }) => {
   const cartLocalStorage = JSON.parse(localStorage.getItem("productsInCart"));
   
   const [productsInCart, setProductsInCart] = useState([]);
-  
  
   useEffect(() => {
     if(cartLocalStorage){

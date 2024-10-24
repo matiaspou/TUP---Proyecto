@@ -3,6 +3,7 @@ import './Checkout.css';
 import discountCodes from "../../mocks/discounts.json";
 import { useSession } from '../../context/SessionContext.jsx';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartController.jsx';
 
 export function Checkout ({products}) {
 
@@ -17,6 +18,8 @@ export function Checkout ({products}) {
     const [paymentMethod, setPaymentMethod] = useState("Efectivo");
 
     const { user, checkSession, logout } = useSession(); 
+
+    const { getPriceTotalOfCart} = useCart();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -50,7 +53,7 @@ export function Checkout ({products}) {
         }
     };
 
-    const completarCompra = () => {
+    const completarCompra = async () => {
         if (!user) {
             navigate("/login");
         } else {
@@ -66,64 +69,57 @@ export function Checkout ({products}) {
                 priceShippingFinal = "0";
             }
 
-            let priceTotal = parseInt(cart.reduce((total, product) => total + product.precio, 0)); 
+            let priceTotal = getPriceTotalOfCart();
 
             priceTotal += parseInt(priceShippingFinal);
 
             priceTotal *= (1 - (parseInt(discountByCode) / 100)); 
 
-
-
-            cart.push({"nombre_producto":shippingMethod,
-                "precio": priceShippingFinal,
-                "id_producto":10001
-            }, {"nombre_producto": "Descuento",
-                "precio": discountByCode,
-                "id_producto":10000
-            })
             
-            // Datos de los inputs recogidos
-            const dataCompra = {
-                shippingMethod,
-                paymentMethod,
-                discount: discountByCode,
-                products: cart,
-                client: user.email,
-                priceTotal:  priceTotal
+            const dataPedido = {
+                id_usuario: user.id_usuario,
+                fecha_pedido: new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' '),
+                forma_de_pago: paymentMethod,
+                descuento: discountByCode,
+                precio_total: priceTotal,
+                metodo_de_entrega: shippingMethod,
+                precio_de_envio: priceShippingFinal,
             };
 
-            //console.log("Datos de la compra:", dataCompra);
-
-            localStorage.removeItem("productsInCart");
-
+            console.log(dataPedido);
+            
             
 
-            navigate("/profile")
+            try {
+                const response = await createOrder(dataPedido, cart);
 
-            
-        }
+                if (!response.success) {
+                    console.log(response.message);
+                } else {
+                    console.log(response.message);
+                    localStorage.removeItem("productsInCart");
+                    navigate("/profile");
+                }
+            } catch (error) {
+                console.error('Error al crear la orden:', error);
+            }
+            }
     };
 
-    function insertOrder(dataPedido) {
-        fetch('http://localhost/src/TUP---Proyecto/src/app.server/insertOrder.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: {dataPedido}
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error en la respuesta del servidor');
-            }
-            return response.text(); // O .json() si tu PHP retorna un JSON
-        })
-        .then(result => {
-            console.log(result); // Maneja la respuesta del servidor
-        })
-        .catch(error => {
-            console.error('Error al insertar el pedido:', error);
-        });
+    const createOrder = async (dataPedido, cart) => {
+            const response = await fetch("http://localhost/src/TUP---Proyecto/src/app.server/controllers/OrdersController.php", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: 'insertOrder',
+                    order: dataPedido,
+                    cart: cart
+                })
+            });
+
+            return await response.json(); 
     }
 
     return (
