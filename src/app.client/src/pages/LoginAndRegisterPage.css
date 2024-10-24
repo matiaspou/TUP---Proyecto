@@ -39,12 +39,17 @@
     flex-direction: column;
     padding: 1rem;
     padding-bottom: 3rem;
+    font-size: 0.9rem;
 }
 
 
 .Login-Form form{
     display: flex;
     flex-direction: column;
+}
+
+.Login-Form form button{
+    margin-top: 2rem;
 }
 
 .Login-Form input{
@@ -54,6 +59,8 @@
     border-radius: 0.7rem;
     color: rgb(29, 27, 27);
     font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .Login-Form input:focus-visible{

@@ -68,10 +68,12 @@
   font-size: 1rem;
 }
 
-
-
 .CartPage-CheckoutContent, .CartPage-ProductsContent{
   padding: 20px;
+}
+
+.CartPage-CheckoutContent{
+  width: 90%;
 }
 
 .CartPage-ProductsContent{

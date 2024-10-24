@@ -21,9 +21,6 @@ export function Checkout ({products}) {
     const navigate = useNavigate();
     const location = useLocation();
 
-    useEffect(() => { 
-        checkSession();
-    },[location.search]);
 
     const postalCodeValidationKeyUp = (event) =>{
         const codeValue = event.target.value;

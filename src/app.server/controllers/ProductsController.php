@@ -1,6 +1,6 @@
 <?php
 include '../repositories/ProductsRepository.php';
-include '../config/cors.php';
+include '../config/headers.php';
 
 header("Content-Type: application/json"); 
 

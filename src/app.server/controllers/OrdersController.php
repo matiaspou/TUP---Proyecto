@@ -1,5 +1,5 @@
 <?php
-include '../repositories/CategoriesRepository.php';
+include '../repositories/OrdersRepository.php';
 include '../config/headers.php';
 
 header("Content-Type: application/json"); 
@@ -12,24 +12,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $input['action'];
 
     switch ($action) {
-        case 'getCategoryByID':
+        case 'deleteProduct': 
+            $id = $input['id_producto']; 
+            $response = deleteProduct($id);
+            echo ([$response]);
+            break;
+
+        case 'updateProduct':
+            $product = $input['product']; 
+            $response = updateProduct($product);
+            echo ([$response]);
+            break;
+
+        case 'getProductById':
             if (isset($input['id'])) {  
                 $id = $input['id'];
-                $response = getCategoryByID($id);
+                incrementInteractionsCount($id);
+                $response = getProductById($id);
                 echo ($response);
             } else {
                 echo json_encode(['success' => false, 'message' => 'ID no proporcionado']);
             }
             break;
 
-        case 'getAllCategories':
-            $response = getAllCategories();
+        case 'getAllProducts':
+            $response = getAllProducts();
             echo $response;
             break;
 
-        case 'insertCategory':
-            $id = $input['category']; 
-            $response = insertCategory($category);
+        case 'getSelectedProducts':
+            $response = getSelectedProducts();
+            echo $response;
+            break;
+
+        case 'insertProduct':
+            $id = $input['product']; 
+            $response = insertProduct($product);
             echo $response;
             break;
 

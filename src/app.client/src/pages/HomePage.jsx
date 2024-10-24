@@ -8,9 +8,12 @@ import banner from "../assets/banners/pbaabril2024.jpg"
 import banner2 from "../assets/banners/gaming-pcs-banner_ICUE-CERTIFIED.webp"
 import banner3 from "../assets/banners/banner_still.jpg"
 import banner4 from "../assets/banners/geforce-ada-4090-background-image-spec2-bb300_300-l.jpg"
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useSession } from '../context/SessionContext.jsx'
 
 function HomePage() {
-//falta agregar una vista de productos nuevos e imagenes tipo poster
+
 
   return (
     <>

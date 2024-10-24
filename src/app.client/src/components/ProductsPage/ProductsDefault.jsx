@@ -44,7 +44,8 @@ export function ProductsDefault() {
     }
 
     return (
-        <div className="ProductsDefault-grid">
+        <div className="ProductsDefault-container">
+            <div className="ProductsDefault-grid">   
             {products
                 .filter(product =>
                     (categoryApplicated === 0 || product.id_categoria === String(categoryApplicated)) && 
@@ -54,6 +55,7 @@ export function ProductsDefault() {
                     <CardProduct key={product.id_producto} product={product} />
                 ))
             }
+            </div> 
         </div>
     );
 }

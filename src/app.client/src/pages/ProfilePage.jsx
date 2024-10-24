@@ -14,12 +14,6 @@ function ProfilePage() {
 
   const { user, checkSession } = useSession(); 
 
-  useEffect(() => { 
-    const response = checkSession(); 
-    if (!response.success) { 
-      navigate('/'); 
-    }
-  }, []);
 
 
   return (

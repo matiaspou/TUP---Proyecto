@@ -36,7 +36,7 @@
 
 
 .ProductsPage-ProductGrid{
-  width: 87%;
+  width: 80%;
   background-color: rgb(247, 247, 247);
   border-radius: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.158);
@@ -53,4 +53,10 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   border-radius: 1rem 1rem 0 0;
+}
+
+.ProductsPage-ProductGridContent{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

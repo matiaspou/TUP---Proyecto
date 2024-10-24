@@ -14,12 +14,13 @@
   padding-right: 1rem;
   border-radius: 20px;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
-  width: 90%;
+
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
+  width: 100%;
 }
 
 .Checkout-Box h3{

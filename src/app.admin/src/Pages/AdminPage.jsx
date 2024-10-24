@@ -10,13 +10,6 @@ function AdminPage() {
 
   const { user, checkSession } = useSession(); 
 
-  useEffect(() => { 
-    const response = checkSession(); 
-    if (!response.success) { 
-      navigate('/login'); 
-    }
-  }, [location.search, navigate]);
-
   return (
     <div className="AdminPage-Layout">
       {user ? <ControlDashboard /> : null}

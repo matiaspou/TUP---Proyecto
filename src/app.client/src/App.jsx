@@ -8,9 +8,9 @@ import CartPage from './pages/CartPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 import PaymentPage from './pages/PaymentPage.jsx';
 import LoginAndRegisterPage from './pages/LoginAndRegisterPage.jsx';
+import { useEffect } from 'react';
 
 function App() {
-//falta agregar una vista de productos nuevos e imagenes tipo poster
 
   return (
     <>

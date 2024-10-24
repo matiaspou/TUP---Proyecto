@@ -1,5 +1,5 @@
 <?php
-include '../config/cors.php';
+include '../config/headers.php';
 
 
 function getCategoryByID($id)

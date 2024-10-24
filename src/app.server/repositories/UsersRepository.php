@@ -1,25 +1,8 @@
 <?php
-include '../config/cors.php';
+include '../config/headers.php';
 
-function userAuthetication($user)
-{
-    $connection = getConnection();
-    $stmt = $connection->prepare("SELECT id_usuario, email, id_rol, nombre, apellido, razon_social, persona_fisica FROM usuario WHERE email == ? AND password == ?");
-    $stmt->bind_param("ss", $user->email, $user->password);
-    $result = $stmt->execute();
+session_start(); 
 
-    if($result){
-        session_start();
-        $_SESSION['id_usuario'] = $user['id_usuario'];
-        $_SESSION['email'] = $user['email'];
-    };
-    
-    return json_encode([
-        'success' => $result,
-        'result' => null,
-        'message' => $result ? 'Inicio de session exitosa' : 'Credenciales incorrectas'
-    ]);
-}
 
 function updateUser($user)
 {
@@ -75,16 +58,18 @@ function getAllUsers()
 function insertUser($user)
 {
     $connection = getConnection();
-    $stmt = $connection->prepare("INSERT INTO usuario  (email = ?, password = ?, id_rol = ?, nombre = ?, apellido = ?, razon_social = ?, persona_fisica = ? ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssisssb", $user->email, $user->password, $user->id_rol, $user->nombre, $user->apellido, $user->razon_social, $user->persona_fisica);
+    $stmt = $connection->prepare("INSERT INTO usuario (email, password, id_rol, nombre, apellido, razon_social, persona_fisica) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssissss", $user->email, $user->password, $user->id_rol, $user->nombre, $user->apellido, $user->razon_social, $user->persona_fisica);
     $result = $stmt->execute();
 
     return json_encode([
         'success' => $result,
         'result' => null,
-        'message' => $result ? 'Producto insertado correctamente' : 'Error al insertar el producto'
+        'message' => $result ? 'Usuario insertado correctamente' : 'Error al insertar el usuario'
     ]);
 }
+
+
 
 function getConnection()
 {

@@ -6,6 +6,8 @@ import { ViewSelectedProducts } from '../components/CommonsComponents/ViewSelect
 import { CardProductsInCart } from '../components/CartPage/CardProductsInCart.jsx'
 import { useCart } from "../context/CartController.jsx";
 import {Checkout} from '../components/CartPage/Checkout.jsx'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useSession } from '../context/SessionContext.jsx'
 
 function CartPage() {
 

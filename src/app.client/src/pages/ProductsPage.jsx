@@ -7,7 +7,7 @@ import { Categories } from '../components/ProductsPage/Categories.jsx'
 
 
 function ProductsPage() {
-//falta agregar una vista de productos nuevos e imagenes tipo poster
+
 
   return (
     <>
@@ -23,7 +23,10 @@ function ProductsPage() {
             </div>
             <article className='ProductsPage-ProductGrid'>
                 <div className="ProductsPage-SubContentTitle"></div>
-                <ProductsDefault/>
+                <div className="ProductsPage-ProductGridContent">
+                  <ProductsDefault/>
+                </div>
+                
             </article>
           </div>
         </div>

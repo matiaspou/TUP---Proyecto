@@ -13,10 +13,7 @@ export const Header = () => {
     const location = useLocation();
     const { user, checkSession, logout } = useSession(); 
 
-    useEffect(() => { 
-        const response = checkSession(); 
-      }, [location.search]);
-   
+
 
     const searchProduct = (event) =>{
         event.preventDefault(); 
@@ -62,7 +59,9 @@ export const Header = () => {
                         <div className="cartTitle">Carrito</div>
                     </a >
                     <hr />
-                    {user ? ( <> <a href="/profile">👤 Perfil</a> <hr /> <button onClick={() => { if (window.confirm('Confirmar cierre de sesión')) { logout(); }
+                    {user ? ( <> <a href="/profile">👤 {user.persona_fisica ? user.nombre : user.razon_social}</a> <hr /> 
+                    
+                    <button onClick={() => { if (window.confirm('Confirmar cierre de sesión')) { logout(); }
                             }}
                             >
                             🚪🏃‍♂️ Cerrar Sesión
