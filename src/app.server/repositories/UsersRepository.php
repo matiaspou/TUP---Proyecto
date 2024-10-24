@@ -8,7 +8,9 @@ function updateUser($user)
 {
     $connection = getConnection();
     $stmt = $connection->prepare("UPDATE usuario SET email = ?, id_rol = ?, nombre = ?, apellido = ?, razon_social = ?, persona_fisica = ? WHERE id_usuario = ?");
-    $stmt->bind_param("sisssb", $user->id_usuario, $user->email, $user->id_rol, $user->nombre, $user->apellido, $user->razon_social, $user->persona_fisica,$user->id_usuario);
+    
+    $stmt->bind_param("sissssi", $user->email, $user->id_rol, $user->nombre, $user->apellido, $user->razon_social, $user->persona_fisica, $user->id_usuario);
+    
     $result = $stmt->execute();
 
     return json_encode([
@@ -17,6 +19,7 @@ function updateUser($user)
         'message' => $result ? 'Usuario actualizado correctamente' : 'Error al actualizar al usuario'
     ]);
 }
+
 
 
 function getUserById($id)
@@ -58,16 +61,44 @@ function getAllUsers()
 function insertUser($user)
 {
     $connection = getConnection();
-    $stmt = $connection->prepare("INSERT INTO usuario (email, password, id_rol, nombre, apellido, razon_social, persona_fisica) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssissss", $user->email, $user->password, $user->id_rol, $user->nombre, $user->apellido, $user->razon_social, $user->persona_fisica);
-    $result = $stmt->execute();
+    if (!$connection) {
+        return json_encode([
+            'success' => false,
+            'message' => 'No se pudo conectar a la base de datos.'
+        ]);
+    }
 
+    print_r($user['email']); 
+    
+    $stmt = $connection->prepare("INSERT INTO usuario (email, password, id_rol, nombre, apellido, razon_social, persona_fisica) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    
+    if (!$stmt) {
+        return json_encode([
+            'success' => false,
+            'message' => 'Error en la preparación de la consulta: ' . $connection->error
+        ]);
+    }
+
+    $stmt->bind_param("ssisssi", $user['email'], $user['password'], $user['id_rol'], $user['nombre'], $user['apellido'], $user['razon_social'], $user['persona_fisica']);
+    
+    $result = $stmt->execute();
+    
+    if (!$result) {
+        return json_encode([
+            'success' => false,
+            'result' => null,
+            'message' => 'Error al crear el usuario: ' . $stmt->error
+        ]);
+    }
+    
     return json_encode([
-        'success' => $result,
+        'success' => true,
         'result' => null,
-        'message' => $result ? 'Usuario insertado correctamente' : 'Error al insertar el usuario'
+        'message' => 'Usuario creado correctamente'
     ]);
 }
+
+
 
 
 

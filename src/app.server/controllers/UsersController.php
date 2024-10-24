@@ -27,6 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo checkSession();
             break;
 
+        case 'insertUser':
+            if (isset($input['User'])) {  
+                $User = $input['User']; 
+                $response = insertUser($User);
+                echo $response; 
+            } else {
+                echo json_encode(['success' => false, 'message' => 'Por favor envíe datos de usuario válidos']);
+            }
+        break;
+            
+
 
         default:
             echo json_encode(['success' => false, 'message' => 'Acción no válida']);

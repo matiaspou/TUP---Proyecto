@@ -12,6 +12,30 @@ export const SessionProvider = ({ children }) => {
     checkSession();
   }, [])
 
+  const register = async (userData) => {
+    var response = await fetch("http://localhost/src/TUP---Proyecto/src/app.server/controllers/UsersController.php", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({ action: 'insertUser', User: userData })
+    });
+
+    const textResponse = await response.text(); 
+
+    let jsonResponse;
+    try {
+        jsonResponse = JSON.parse(textResponse);
+    } catch (error) {
+        console.error("Error parsing JSON: ", error);
+        throw new Error('Error en la respuesta del servidor');
+    }
+
+    return jsonResponse;
+}
+
+
   const login = async (userData) => {
     try {
       const response = await fetch("http://localhost/src/TUP---Proyecto/src/app.server/controllers/UsersController.php", {
@@ -120,7 +144,7 @@ export const SessionProvider = ({ children }) => {
   };
 
   return (
-    <SessionContext.Provider value={{ user, login, logout, checkSession }}>
+    <SessionContext.Provider value={{ user, login, logout, checkSession, register }}>
       {children}
     </SessionContext.Provider>
   );
